@@ -179,6 +179,25 @@ section h2 {
   gap: 20px;
   justify-items: center;
 }
+.explore-button {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn-explore {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #0078D4;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-explore:hover {
+  background-color: #005fa3;
+}
 
 .product-card {
   background: white;
@@ -329,6 +348,7 @@ section.visible {
   transform: translateY(0);
 
 }
+
 
 
 

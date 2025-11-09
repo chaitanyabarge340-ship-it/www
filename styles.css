@@ -166,8 +166,12 @@ section h2 {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
   padding: 20px;
-  max-width: 100px;
+  max-width: 50px;
   margin: auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .product-grid img {
@@ -310,4 +314,5 @@ section.visible {
   transform: translateY(0);
 
 }
+
 

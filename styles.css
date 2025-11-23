@@ -11,6 +11,39 @@
   --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
   --blur: saturate(140%) blur(10px);
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;   /* allows wrapping on small screens */
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.site-header .logo img {
+  max-height: 50px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .site-header nav {
+    flex-direction: column;   /* stack menu vertically */
+    align-items: flex-start;
+  }
+
+  .site-header .logo img {
+    max-height: 40px;
+  }
+
+  body {
+    font-size: 14px;          /* smaller text for mobile */
+  }
+}
+
+
 [data-theme="light"] {
   --bg: #f5f7fb;
   --surface: rgba(255, 255, 255, 0.7);

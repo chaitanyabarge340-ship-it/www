@@ -210,6 +210,27 @@
   gap: 20px;
 }
 
+    .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* spacing between boxes */
+}
+
+.box {
+  flex: 1 1 200px; /* allows boxes to shrink/grow */
+  padding: 20px;
+  box-sizing: border-box;
+}
+    .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.box {
+  padding: 20px;
+  box-sizing: border-box;
+}
 .box {
   padding: 20px;
   box-sizing: border-box;

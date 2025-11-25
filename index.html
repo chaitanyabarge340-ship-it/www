@@ -624,8 +624,6 @@ img {
 
       <form class="card reveal" onsubmit="handleSubmit(event)">
         <div class="form">
-        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="335a4ee5-620b-4547-b147-8939c0b18a93">
           <input class="input" type="text" name="name" placeholder="Your name" required />
           <input class="input" type="tel" name="phone" placeholder="Phone number" required />
           <select class="select" name="product" required>
@@ -649,7 +647,7 @@ img {
       </form>
       <p class="small">Note: By submitting, you agree to be contacted about your quotation.</p>
     </div>
-    <div id="result"></div>
+    
   </section>
 
   <!-- Footer -->
@@ -735,7 +733,7 @@ img {
     };
 
     try {
-      const res = await emailjs.send("oJodgJEEojEt4v0Vz", "template_3odm287", data);
+      const res = await emailjs.send("service_2sqtw5v", "template_3odm287", data);
       result.innerHTML = "<span style='color:green'>✅ Thank you! Your request has been sent.</span>";
       form.reset();
     } catch (err) {

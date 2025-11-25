@@ -709,5 +709,29 @@ img {
       window.location.href = '/thank-you.html';
     }
   </script>
+
+  ...
+<div id="result"></div>
+
+<script>
+const form = document.getElementById("contact-form");
+const result = document.getElementById("result");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: new FormData(form)
+  });
+  if (response.ok) {
+    result.innerHTML = "<p style='color:green'>✅ Thank you! Your request has been sent.</p>";
+    form.reset();
+  } else {
+    result.innerHTML = "<p style='color:red'>❌ Something went wrong. Please try again.</p>";
+  }
+});
+</script>
+</body>
+</html>
 </body>
 </html>

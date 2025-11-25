@@ -28,7 +28,7 @@
   flex: 1 1 220px;       /* responsive width */
   min-width: 180px;
   box-sizing: border-box;
-  word-break: break-word; /* ensures long text wraps */
+   /* ensures long text wraps */
   display: flex;
   align-items: center;
   gap: 6px;              /* space between bullet and text */

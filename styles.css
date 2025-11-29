@@ -369,3 +369,30 @@ form button {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
 }
+/* Footer mobile optimization */
+@media (max-width: 600px) {
+  footer {
+    padding: 15px 10px;   /* reduce padding */
+    text-align: center;   /* center align for neatness */
+  }
+
+  footer h4 {
+    font-size: 14px;      /* smaller headings */
+    margin-bottom: 8px;
+  }
+
+  footer p, footer a {
+    font-size: 13px;      /* shrink text size */
+    line-height: 1.4;
+  }
+
+  footer .footer-section {
+    margin-bottom: 12px;  /* reduce spacing between sections */
+  }
+
+  footer .quick-links {
+    display: flex;
+    flex-direction: column; /* stack links vertically */
+    gap: 6px;
+  }
+}

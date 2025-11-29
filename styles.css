@@ -406,3 +406,19 @@ form button {
     margin: 8px 0;         /* reduce vertical spacing */
   }
 }
+header .logo img {
+  max-width: 120px;   /* controls size */
+  height: auto;       /* keeps proportions */
+}
+
+@media (max-width: 600px) {
+  header .logo img {
+    max-width: 80px;  /* smaller on mobile */
+  }
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}

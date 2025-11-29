@@ -434,6 +434,38 @@ img {
     /* Animations */
     .reveal { opacity: 0; transform: translateY(14px); transition: opacity 500ms ease, transform 500ms ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
+    /* Footer mobile optimization */
+@media (max-width: 600px) {
+  footer {
+    padding: 12px 8px;       /* reduce padding */
+    text-align: center;      /* center align for neatness */
+  }
+
+  footer h4 {
+    font-size: 14px;         /* smaller headings */
+    margin-bottom: 6px;
+  }
+
+  footer p, footer a {
+    font-size: 13px;         /* shrink text size */
+    line-height: 1.4;
+  }
+
+  footer .footer-section {
+    margin-bottom: 10px;     /* reduce spacing between sections */
+  }
+
+  footer .quick-links {
+    display: flex;
+    flex-direction: column;  /* stack links vertically */
+    gap: 5px;
+  }
+
+  footer img {
+    max-width: 120px;        /* shrink logo if present */
+    height: auto;
+  }
+}
   </style>
 </head>
 <body data-theme="dark">

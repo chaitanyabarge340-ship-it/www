@@ -466,6 +466,16 @@ img {
     height: auto;
   }
 }
+    /* Footer brand text fix */
+@media (max-width: 600px) {
+  footer .brand-text {
+    font-size: 16px;       /* smaller, balanced size */
+    font-weight: 600;      /* keep it bold but not overwhelming */
+    text-align: center;    /* center align for neatness */
+    letter-spacing: 0.5px; /* improve readability */
+    margin: 8px 0;         /* reduce vertical spacing */
+  }
+}
   </style>
 </head>
 <body data-theme="dark">
@@ -691,7 +701,7 @@ img {
       <div>
         <div class="brand">
           
-          <div>Ratan Plasfab</div>
+          <div class="brand-text">Ratan Plasfab</div>
         </div>
         <p class="small" style="margin-top:8px;">UPVC windows & doors • A-33 Mini MIDC, Koregaon - 415501, Satara, Maharashtra</p>
         <p class="small">Mon–Sat: 09:00 AM – 6:00 PM</p>

@@ -431,7 +431,7 @@ header {
 }
 
 .nav-logo img {
-  height: 35px;   /* adjust size */
+  height: 40px;   /* adjust size */
   width: auto;
 }
 
@@ -444,4 +444,9 @@ header {
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
+}
+@media (max-width: 600px) {
+  .nav-logo img {
+    height: 28px;
+  }
 }

@@ -426,27 +426,41 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 12px 24px;
-  background: var(--card); /* or your preferred background */
+  background: var(--card);
 }
 
 .nav-logo img {
-  height: 36px;   /* balanced with nav link text */
-  width: auto;    /* keeps proportions */
-  vertical-align: middle;
+  height: 36px !important;
+  width: auto !important;
+  display: block;
 }
-.nav-links a {
-  font-size: 16px; /* matches logo height visually */
-  line-height: 36px;
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .nav-links a {
+  font-size: 16px;
+  line-height: 36px;
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
 }
+
+/* Mobile adjustments */
 @media (max-width: 600px) {
   .nav-logo img {
-    height: 28px;
+    height: 28px !important;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 12px;
   }
 }

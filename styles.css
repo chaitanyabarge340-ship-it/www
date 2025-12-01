@@ -431,13 +431,13 @@ header {
 }
 
 .nav-logo img {
-  height: 40px;   /* adjust size */
-  width: auto;
+  height: 36px;   /* balanced with nav link text */
+  width: auto;    /* keeps proportions */
+  vertical-align: middle;
 }
-
-.nav-links {
-  display: flex;
-  gap: 20px;
+.nav-links a {
+  font-size: 16px; /* matches logo height visually */
+  line-height: 36px;
 }
 
 .nav-links a {

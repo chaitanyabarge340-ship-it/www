@@ -422,3 +422,26 @@ header {
   justify-content: space-between;
   padding: 10px 20px;
 }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: var(--card); /* or your preferred background */
+}
+
+.nav-logo img {
+  height: 50px;   /* adjust size */
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}

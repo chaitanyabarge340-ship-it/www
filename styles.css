@@ -47,6 +47,8 @@
   max-width: 100%;
 }
 
+
+
 .feature-box {
   flex: 1 1 200px; /* responsive width */
   min-width: 120px;
@@ -494,4 +496,21 @@ header {
   top: 0;
   z-index: 1000;
   background-color: #fff;
+}
+
+.feature-block {
+  margin-bottom: 2rem;
+  text-align: left; /* or center if you prefer */
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.feature-description {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0; /* ensures it stays close to the heading */
 }

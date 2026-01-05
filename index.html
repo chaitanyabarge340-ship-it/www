@@ -849,19 +849,7 @@ img {
   const result = document.getElementById("result");
   const btn = document.getElementById("submit-btn");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    btn.disabled = true;
-    result.textContent = "Sending...";
-
-    const formData = new FormData(form);
-    const data = {
-      name: formData.get("name"),
-      phone: formData.get("phone"),
-      product: formData.get("product"),
-      city: formData.get("city"),
-      message: formData.get("message")
-    };
+ 
 
     try {
       const res = await emailjs.send("service_2sqtw5v", "template_3odm287", data);

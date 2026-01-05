@@ -122,6 +122,38 @@ body.dark-mode .brand-logo {
       cursor: pointer;
     }
 
+    .image-overlay {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(20,58,136,0.16), rgba(20,161,147,0.12));
+  height: 280px;
+  display: grid;
+  place-items: center;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3; /* adjust for visibility behind text */
+  z-index: 1;
+}
+
+.stamp {
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
+  color: #003366; /* adjust for contrast */
+  background-color: rgba(255, 255, 255, 0.6); /* optional for readability */
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+}
+
     /* Hero */
     .hero {
       padding: 72px 0 40px;
@@ -285,10 +317,12 @@ body.dark-mode .brand-logo {
             and craftsmanship you can feel in every touchpoint.
           </p>
         </div>
-        <div class="section-card fade-up delay-1">
-          <div style="border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); background: linear-gradient(180deg, rgba(20,58,136,0.16), rgba(20,161,147,0.12)); height: 280px; display: grid; place-items: center;">
-            <span class="stamp">Placeholder image • UPVC window detail</span>
-          </div>
+       <div class="section-card fade-up delay-1">
+  <div class="image-overlay">
+    <img src="images/upvc-window-detail.png" alt="UPVC window detail" class="background-image" />
+    <span class="stamp">Placeholder image • UPVC window detail</span>
+  </div>
+</div>
           <div style="display:flex; gap:12px; margin-top: 14px;">
             <span class="stamp">ISO-grade materials</span>
             <span class="stamp">Clean installation</span>
@@ -478,6 +512,7 @@ body.dark-mode .brand-logo {
 </body>
 
 </html>
+
 
 
 

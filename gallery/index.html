@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | uPVC Windows & Doors</title>
+
+<!-- SEO SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "uPVC Windows and Doors Project Gallery",
+  "description": "Gallery showcasing premium uPVC window and door installations across residential and commercial projects.",
+  "image": [
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    "https://images.unsplash.com/photo-1613545325278-f24b1c7b3c1f",
+    "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea"
+  ]
+}
+</script>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:radial-gradient(circle at top,#13233d 0%,#05070c 60%);
+    color:#fff;
+}
+
+/* HERO */
+.hero{
+    padding:90px 8% 50px;
+}
+.hero h1{
+    font-size:40px;
+    font-weight:600;
+}
+.hero p{
+    margin-top:12px;
+    max-width:650px;
+    color:#b6c0d1;
+    line-height:1.6;
+}
+
+/* GRID */
+.gallery{
+    padding:0 8% 60px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+/* CARD */
+.card{
+    position:relative;
+    height:240px;
+    border-radius:20px;
+    overflow:hidden;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 25px 50px rgba(0,0,0,.45);
+    cursor:pointer;
+    opacity:0;
+    transform:translateY(40px);
+    transition:.5s;
+}
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 45px 90px rgba(100,160,255,.35);
+}
+
+/* IMAGE */
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+.card:hover img{
+    transform:scale(1.1);
+}
+
+/* OVERLAY */
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.7),transparent);
+    display:flex;
+    align-items:flex-end;
+    padding:18px;
+    opacity:0;
+    transition:.4s;
+}
+.card:hover .overlay{
+    opacity:1;
+}
+.overlay h3{
+    font-size:16px;
+}
+
+/* LOAD MORE */
+.load-more-wrapper{
+    text-align:center;
+    padding-bottom:90px;
+}
+.load-more{
+    padding:14px 34px;
+    border-radius:40px;
+    border:none;
+    background:linear-gradient(135deg,#6ea8ff,#3f7cff);
+    color:#000;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+}
+.load-more:hover{
+    opacity:.9;
+}
+
+/* LIGHTBOX */
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.85);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:99;
+}
+.lightbox img{
+    max-width:90%;
+    max-height:85vh;
+    border-radius:18px;
+}
+.lightbox span{
+    position:absolute;
+    top:30px;
+    right:40px;
+    font-size:32px;
+    cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .hero h1{font-size:30px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Project Gallery</h1>
+    <p>
+        A showcase of our premium uPVC window and door installations across residential and commercial spaces.
+    </p>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+
+    <!-- REPEAT CARDS (ADD MORE AS NEEDED) -->
+    <div class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+        <div class="overlay"><h3>Fixed Window Installation</h3></div>
+    </div>
+
+    <div class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1613545325278-f24b1c7b3c1f">
+        <div class="overlay"><h3>Sliding Window System</h3></div>
+    </div>
+
+    <div class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea">
+        <div class="overlay"><h3>Sliding Balcony Door</h3></div>
+    </div>
+
+    <div class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d">
+        <div class="overlay"><h3>Luxury Entrance Door</h3></div>
+    </div>
+
+    <div class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c">
+        <div class="overlay"><h3>Villa Casement Windows</h3></div>
+    </div>
+
+    <div class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea">
+        <div class="overlay"><h3>Modern uPVC Door Project</h3></div>
+    </div>
+
+</section>
+
+<!-- LOAD MORE -->
+<div class="load-more-wrapper">
+    <button class="load-more" id="loadMore">Load More</button>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span onclick="closeLightbox()">×</span>
+    <img id="lightbox-img">
+</div>
+
+<script>
+/* INITIAL PAGINATION */
+const cards=[...document.querySelectorAll('.card')];
+let visible=6;
+
+cards.forEach((c,i)=>{ if(i>=visible) c.style.display='none'; });
+
+document.getElementById('loadMore').onclick=()=>{
+    visible+=6;
+    cards.forEach((c,i)=>{
+        if(i<visible) c.style.display='block';
+    });
+    if(visible>=cards.length) document.getElementById('loadMore').style.display='none';
+};
+
+/* LIGHTBOX */
+document.querySelectorAll('.card img').forEach(img=>{
+    img.onclick=()=>{
+        document.getElementById('lightbox').style.display='flex';
+        document.getElementById('lightbox-img').src=img.src;
+    };
+});
+function closeLightbox(){
+    document.getElementById('lightbox').style.display='none';
+}
+
+/* SCROLL ANIMATION */
+const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting)e.target.classList.add('show');
+    });
+});
+cards.forEach(c=>obs.observe(c));
+</script>
+
+</body>
+</html>

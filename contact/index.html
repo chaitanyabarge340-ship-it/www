@@ -1,105 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Ratan Plasfab</title>
-  <link rel="canonical" href="https://www.ratanplasfab.in/contact/" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | uPVC Windows & Doors</title>
 
+<!-- SEO -->
+<meta name="description" content="Contact us for premium uPVC windows and doors. Get expert consultation, pricing, and installation support.">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #e0f7fa, #ffffff);
-      color: #333;
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:radial-gradient(circle at top,#13233d 0%,#05070c 60%);
+    color:#fff;
+}
+
+/* HERO */
+.hero{
+    padding:90px 8% 60px;
+}
+.hero h1{
+    font-size:40px;
+    font-weight:600;
+}
+.hero p{
+    margin-top:12px;
+    max-width:650px;
+    color:#b6c0d1;
+    line-height:1.6;
+}
+
+/* WRAPPER */
+.contact-wrapper{
+    padding:0 8% 90px;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:40px;
+}
+
+/* FORM */
+.contact-form{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:22px;
+    padding:36px;
+    box-shadow:0 30px 60px rgba(0,0,0,.5);
+}
+
+.contact-form h2{
+    font-size:24px;
+    margin-bottom:10px;
+}
+.contact-form p{
+    color:#b6c0d1;
+    margin-bottom:26px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+.form-group label{
+    display:block;
+    font-size:14px;
+    margin-bottom:6px;
+    color:#cfd6e4;
+}
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:14px 16px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.06);
+    color:#fff;
+    outline:none;
+}
+.form-group textarea{
+    resize:none;
+    height:120px;
+}
+
+.submit-btn{
+    margin-top:10px;
+    padding:14px 34px;
+    border-radius:40px;
+    border:none;
+    background:linear-gradient(135deg,#6ea8ff,#3f7cff);
+    color:#000;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+}
+.submit-btn:hover{
+    opacity:.9;
+}
+
+/* INFO BOX */
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.info-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:20px;
+    padding:26px;
+    box-shadow:0 25px 50px rgba(0,0,0,.45);
+}
+.info-card h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+.info-card p{
+    color:#b6c0d1;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    margin-top:10px;
+    padding:14px 26px;
+    border-radius:40px;
+    background:#25D366;
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    display:inline-block;
+}
+
+/* MAP */
+.map{
+    padding:0 8% 90px;
+}
+.map iframe{
+    width:100%;
+    height:350px;
+    border-radius:20px;
+    border:0;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .contact-wrapper{
+        grid-template-columns:1fr;
     }
-
-    .container {
-      max-width: 600px;
-      margin: 60px auto;
-      padding: 30px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+@media(max-width:600px){
+    .hero h1{
+        font-size:30px;
     }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 2rem;
-      color: #0078D4;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-
-    button {
-      width: 100%;
-      padding: 14px;
-      background-color: #0078D4;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #005fa3;
-    }
-
-    .whatsapp-link {
-      display: block;
-      text-align: center;
-      margin-top: 20px;
-      color: #25D366;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .whatsapp-link:hover {
-      text-decoration: underline;
-    }
-  </style>
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Contact Ratan Plasfab</h1>
-    <form action="https://formspree.io/f/mrborkwv" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required />
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" required />
+<!-- HERO -->
+<section class="hero">
+    <h1>Contact Us</h1>
+    <p>
+        Get in touch with us for premium uPVC windows and doors. Our team is ready to assist you with expert guidance and quick quotations.
+    </p>
+</section>
 
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+<!-- CONTACT -->
+<section class="contact-wrapper">
 
-      <button type="submit">Send Message</button>
-    </form>
+    <!-- FORM -->
+    <div class="contact-form">
+        <h2>Send us a message</h2>
+        <p>Fill out the form below and we’ll get back to you shortly.</p>
 
-    <a href="https://wa.me/919822677223" target="_blank" class="whatsapp-link">
-      📱 Contact Us on WhatsApp
-    </a>
-  </div>
+        <form>
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label>Your Message</label>
+                <textarea placeholder="Tell us about your requirement"></textarea>
+            </div>
+
+            <button class="submit-btn">Submit Enquiry</button>
+        </form>
+    </div>
+
+    <!-- INFO -->
+    <div class="contact-info">
+
+        <div class="info-card">
+            <h3>Office Address</h3>
+            <p>
+                Ratan Plasfab<br>
+                A-33 Mini MIDC, Koregaon, Satara - 415501, Maharashtra<br>
+                India
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>Call Us</h3>
+            <p>📞 +91 9822677223</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Email</h3>
+            <p>✉ ratanplasfab@gmail.com</p>
+        </div>
+
+        <a class="whatsapp" href="https://wa.me/919822677223">
+            Chat on WhatsApp
+        </a>
+
+    </div>
+</section>
+
+<!-- MAP -->
+<section class="map">
+    <iframe
+        loading="lazy"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2538882582667!2d74.1749072749419!3d17.6813405832568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2351eddccc005%3A0xa2c23a76cdc5fc86!2sRatan%20Plasfab!5e1!3m2!1sen!2sin!4v1768285254825!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
 </body>
-
 </html>
-
 

@@ -391,41 +391,76 @@
 
   <!-- Quote form -->
   <section id="quote">
-    <div class="container">
-      <h2 class="section-title">Get a free quote</h2>
-      <p class="section-sub">Share your details and we’ll call you to finalize measurements and pricing.</p>
+  <div class="container">
+    <h2 class="section-title">Get a free quote</h2>
+    <p class="section-sub">
+      Share your details and we’ll call you to finalize measurements and pricing.
+    </p>
 
-      <form class="card reveal" onsubmit="handleSubmit(event)">
-        <div class="form">
-          <form id="contact-form">
-            <form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="66bfcfda-a7a8-4b94-b3d4-e9a25356cf93">
-          <input class="input" type="text" name="name" placeholder="Your name" required />
-          <input class="input" type="tel" name="phone" placeholder="Phone number" required />
-          <select class="select" name="product" required>
-            <option value="">Select product type</option>
-            <option value="fixed">Fixed window</option>
-            <option value="sliding">Sliding window</option>
-            <option value="casement">Casement window</option>
-            <option value="combination">Combination window</option>
-            <option value="door">UPVC door</option>
-            <option value="custom">Custom profile</option>
-          </select>
-          <input class="input" type="text" name="city" placeholder="City / Area (e.g., Satara, Karad)" />
-        </div>
-        <div style="margin-top:12px;">
-          <textarea class="textarea" name="message" placeholder="Share sizes, quantity, or a brief note"></textarea>
-        </div>
-        <div class="hero-cta" style="margin-top:14px;">
-          <button class="btn btn-primary" type="submit">Submit</button>
-            </form>
-          <a class="btn" href="https://wa.me/919822677223?text=Hi%20Ratan%20Plasfab%2C%20I%20want%20a%20quote" target="_blank" rel="noopener">WhatsApp instantly</a>
-        </div>
-      </form>
-      <p class="small">Note: By submitting, you agree to be contacted about your quotation.</p>
-    </div>
-    
-  </section>
+    <!-- SINGLE FORM ONLY -->
+    <form 
+      class="card reveal"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+    >
+
+      <!-- REQUIRED -->
+      <input type="hidden" name="access_key" value="66bfcfda-a7a8-4b94-b3d4-e9a25356cf93">
+
+      <!-- REDIRECT (REQUIRED) -->
+      <input type="hidden" name="redirect" value="https://www.ratanplasfab.in/thank-you.html">
+
+      <!-- OPTIONAL -->
+      <input type="hidden" name="subject" value="New Quote Request">
+      <input type="hidden" name="from_name" value="Ratan Plasfab Website">
+
+      <div class="form">
+        <input class="input" type="text" name="name" placeholder="Your name" required />
+        <input class="input" type="tel" name="phone" placeholder="Phone number" required />
+
+        <select class="select" name="product" required>
+          <option value="">Select product type</option>
+          <option value="fixed">Fixed window</option>
+          <option value="sliding">Sliding window</option>
+          <option value="casement">Casement window</option>
+          <option value="combination">Combination window</option>
+          <option value="door">UPVC door</option>
+          <option value="custom">Custom profile</option>
+        </select>
+
+        <input class="input" type="text" name="city" placeholder="City / Area (e.g., Satara, Karad)" />
+      </div>
+
+      <div style="margin-top:12px;">
+        <textarea
+          class="textarea"
+          name="message"
+          placeholder="Share sizes, quantity, or a brief note"
+        ></textarea>
+      </div>
+
+      <div class="hero-cta" style="margin-top:14px;">
+        <button class="btn btn-primary" type="submit">
+          Submit
+        </button>
+
+        <a
+          class="btn"
+          href="https://wa.me/919822677223?text=Hi%20Ratan%20Plasfab%2C%20I%20want%20a%20quote"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp instantly
+        </a>
+      </div>
+    </form>
+
+    <p class="small">
+      Note: By submitting, you agree to be contacted about your quotation.
+    </p>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer>

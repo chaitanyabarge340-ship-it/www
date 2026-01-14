@@ -398,6 +398,8 @@
       <form class="card reveal" onsubmit="handleSubmit(event)">
         <div class="form">
           <form id="contact-form">
+            <form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="66bfcfda-a7a8-4b94-b3d4-e9a25356cf93">
           <input class="input" type="text" name="name" placeholder="Your name" required />
           <input class="input" type="tel" name="phone" placeholder="Phone number" required />
           <select class="select" name="product" required>
@@ -416,6 +418,7 @@
         </div>
         <div class="hero-cta" style="margin-top:14px;">
           <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
           <a class="btn" href="https://wa.me/919822677223?text=Hi%20Ratan%20Plasfab%2C%20I%20want%20a%20quote" target="_blank" rel="noopener">WhatsApp instantly</a>
         </div>
       </form>

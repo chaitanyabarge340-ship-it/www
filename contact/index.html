@@ -176,47 +176,48 @@ body{
 <section class="contact-wrapper">
 
     <!-- FORM -->
-    <div class="contact-form">
-        <h2>Send us a message</h2>
-        <p>Fill out the form below and we’ll get back to you shortly.</p>
+   <div class="contact-form">
+  <h2>Send us a message</h2>
+  <p>Fill out the form below and we’ll get back to you shortly.</p>
 
-       <form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="66bfcfda-a7a8-4b94-b3d4-e9a25356cf93">
+  <form action="https://api.web3forms.com/submit" method="POST">
 
-    <!-- Redirect after submit -->
-    <input type="hidden" name="_redirect" value="https://www.ratanplasfab.in/thank-you.html">
+    <!-- REQUIRED -->
+    <input type="hidden" name="access_key" value="66bfcfda-a7a8-4b94-b3d4-e9a25356cf93">
 
-    <!-- Optional: Email subject -->
-    <input type="hidden" name="_subject" value="New uPVC Enquiry from Website">
+    <!-- REQUIRED: REDIRECT -->
+    <input type="hidden" name="redirect" value="https://www.ratanplasfab.in/thank-you.html">
 
-    <!-- Optional: Spam protection -->
-    <input type="text" name="_gotcha" style="display:none">
+    <!-- OPTIONAL -->
+    <input type="hidden" name="subject" value="New uPVC Enquiry from Website">
+    <input type="hidden" name="from_name" value="Ratan Plasfab Website">
+
+    <!-- SPAM PROTECTION -->
+    <input type="checkbox" name="botcheck" style="display:none">
 
     <div class="form-group">
-        <label>Your Name</label>
-        <input type="text" name="name" placeholder="Enter your name" required>
+      <label>Your Name</label>
+      <input type="text" name="name" placeholder="Enter your name" required>
     </div>
 
     <div class="form-group">
-        <label>Phone Number</label>
-        <input type="tel" name="phone" placeholder="Enter your phone number" required>
+      <label>Phone Number</label>
+      <input type="tel" name="phone" placeholder="Enter your phone number" required>
     </div>
 
     <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" name="email" placeholder="Enter your email">
+      <label>Email Address</label>
+      <input type="email" name="email" placeholder="Enter your email">
     </div>
 
     <div class="form-group">
-        <label>Your Message</label>
-        <textarea name="message" placeholder="Tell us about your requirement"></textarea>
+      <label>Your Message</label>
+      <textarea name="message" placeholder="Tell us about your requirement"></textarea>
     </div>
 
     <button type="submit" class="submit-btn">Submit Enquiry</button>
-
-</form>
-
-    </div>
+  </form>
+</div>
 
     <!-- INFO -->
     <div class="contact-info">
@@ -257,6 +258,7 @@ body{
 
 </body>
 </html>
+
 
 
 

@@ -462,8 +462,8 @@ header {
   .nav-links {
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
-    margin-top: 12px;
+    width: auto;
+    margin-top: 6px;
   }
 }
 .map-container {
@@ -514,3 +514,35 @@ header {
   color: #555;
   margin-top: 0; /* ensures it stays close to the heading */
 }
+
+/* ===== FIX MOBILE NAV HEIGHT ===== */
+@media (max-width: 768px) {
+
+  header,
+  .navbar,
+  .site-header {
+    padding: 8px 12px !important;
+  }
+
+  .nav-links {
+    gap: 8px !important;
+    margin-top: 6px !important;
+  }
+
+  .nav-links a {
+    padding: 6px 10px !important;
+    line-height: 1.2 !important;
+    font-size: 14px !important;
+  }
+
+}
+
+@media (max-width: 600px) {
+  header img,
+  .logo img,
+  .nav-logo img {
+    max-height: 32px !important;
+  }
+}
+
+

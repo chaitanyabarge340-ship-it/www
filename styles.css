@@ -12,5 +12,33 @@
 .logo img {
   max-height: 48px;
 }
+.navbar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 12px;
+  background: var(--surface);
+}
 
+.top-links,
+.bottom-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.top-links {
+  margin-bottom: 16px; /* space between the two groups */
+}
+
+.nav-links a {
+  padding: 8px 12px;
+  font-size: 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-align: center;
+  color: var(--text);
+  text-decoration: none;
+}
 

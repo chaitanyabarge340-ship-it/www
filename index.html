@@ -196,19 +196,25 @@
         
       </div>
       
-     <nav class="navbar">
-  <div class="nav-links">
+    <nav class="navbar">
+  <div class="nav-links top-links">
     <a href="#home">Home</a>
     <a class="btn" href="https://www.ratanplasfab.in/why-us/">Why Us</a>
+  </div>
+
+  <div class="nav-links bottom-links">
     <a class="btn" href="https://www.ratanplasfab.in/products/">Products</a>
     <a class="btn" href="https://www.ratanplasfab.in/gallery/">Gallery</a>
     <a href="#quote">Get Quote</a>
   </div>
 </nav>
-      <div class="nav-actions">
-        <a class="btn btn-success" href="https://wa.me/919822677223?text=Hi%20Ratan%20Plasfab%20-%20I%20want%20a%20quote" target="_blank" rel="noopener">WhatsApp</a>
-        <button class="btn btn-outline" id="themeToggle" aria-label="Toggle theme">Dark / Light</button>
-      </div>
+
+<div class="nav-actions">
+  <a class="btn btn-success"
+     href="https://wa.me/919822677223?text=Hi%20Ratan%20Plasfab%20-%20I%20want%20a%20quote"
+     target="_blank" rel="noopener">WhatsApp</a>
+  <button class="btn btn-outline" id="themeToggle" aria-label="Toggle theme">Dark / Light</button>
+</div>
     </div>
   </header>
 
@@ -764,29 +770,7 @@ function slide(dir) {
     }
   </script>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  (function() {
-    emailjs.init("oJodgJEEojEt4v0Vz"); // replace with your EmailJS public key
-  })();
 
-  const form = document.getElementById("contact-form");
-  const result = document.getElementById("result");
-  const btn = document.getElementById("submit-btn");
-
- 
-
-    try {
-      const res = await emailjs.send("service_2sqtw5v", "template_3odm287", data);
-      result.innerHTML = "<span style='color:green'>✅ Thank you! Your request has been sent.</span>";
-      form.reset();
-    } catch (err) {
-      result.innerHTML = "<span style='color:red'>❌ Something went wrong. Please try again.</span>";
-    } finally {
-      btn.disabled = false;
-    }
-  });
-</script>
   <meta name="robots" content="index, follow">
 </body>
 </html>

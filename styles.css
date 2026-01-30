@@ -27,5 +27,10 @@
     margin-right: auto;
   }
 }
+.hero-media img {
+  max-width: 100%;
+  height: auto;
+}
+
 
 

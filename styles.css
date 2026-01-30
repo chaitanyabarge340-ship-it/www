@@ -31,6 +31,10 @@
   max-width: 100%;
   height: auto;
 }
+font-display: swap;
+@media(max-width:768px){
+  .hero-badges{display:none}
+}
 
 
 

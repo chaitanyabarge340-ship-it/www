@@ -843,14 +843,16 @@ function slide(dir) {
     }
   </script>
 
-  <script>
-const hamburger = document.getElementById("hamburger");
-const navbar = document.getElementById("navbar");
+ <script>
+  const hamburger = document.getElementById("hamburger");
+  const navbar = document.getElementById("navbar");
 
-hamburger.addEventListener("click", () => {
-  navbar.classList.toggle("active");
-});
+  hamburger.addEventListener("click", () => {
+    navbar.classList.toggle("show");
+    hamburger.classList.toggle("active");
+  });
 </script>
+
 
 
 

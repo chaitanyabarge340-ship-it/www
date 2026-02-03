@@ -847,12 +847,18 @@ function slide(dir) {
  <script>
   const hamburger = document.getElementById("hamburger");
   const navbar = document.getElementById("navbar");
+  const overlay = document.getElementById("overlay");
 
-  hamburger.addEventListener("click", () => {
+  function toggleMenu() {
     navbar.classList.toggle("show");
     hamburger.classList.toggle("active");
-  });
+    overlay.classList.toggle("show");
+  }
+
+  hamburger.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", toggleMenu); // close when clicking outside
 </script>
+
 
 
 

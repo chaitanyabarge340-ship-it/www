@@ -49,6 +49,14 @@ font-display: swap;
 .download-btn:hover {
   background-color: #0066cc; /* Lighter blue on hover */
 }
+.download-btn {
+  display: block;
+  margin: 40px auto;
+}
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30,94,255,0.35);
+}
 
 
 

@@ -57,6 +57,64 @@ font-display: swap;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(30,94,255,0.35);
 }
+/* Container alignment */
+.container.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: var(--text, #fff);
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide desktop nav */
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg, #0b0e12);
+    display: none;
+    z-index: 999;
+  }
+
+  .navbar.active {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 0;
+  }
+
+  /* Optional: center action buttons on mobile */
+  .nav-actions {
+    gap: 10px;
+  }
+}
 
 
 

@@ -242,7 +242,22 @@
         <a class="btn" href="https://www.ratanplasfab.in/gallery/">Gallery</a>
         <a href="#quote">Get Quote</a>
       </div>
+      <!-- MOBILE MENU -->
+<div id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="https://www.ratanplasfab.in/why-us/">Why Us</a>
+  <a href="https://www.ratanplasfab.in/products/">Products</a>
+  <a href="https://www.ratanplasfab.in/gallery/">Gallery</a>
+  <a href="#quote">Get Quote</a>
+</div>
+
+<div id="overlay"></div>
+
     </nav>
+  
+
+<div id="overlay"></div>
+
 
     <!-- ACTIONS -->
     <div class="nav-actions">
@@ -843,21 +858,30 @@ function slide(dir) {
       window.location.href = '/thank-you.html';
     }
   </script>
+<script>
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("overlay");
+
+function toggleMenu() {
+  mobileMenu.classList.toggle("show");
+  overlay.classList.toggle("show");
+}
+
+hamburger.addEventListener("click", toggleMenu);
+overlay.addEventListener("click", toggleMenu);
+</script>
+
 
  <script>
-  const hamburger = document.getElementById("hamburger");
-  const navbar = document.getElementById("navbar");
-  const overlay = document.getElementById("overlay");
+  const menuIcon = document.querySelector('.menu-icon');
+  const navLinks = document.querySelector('.nav-links');
 
-  function toggleMenu() {
-    navbar.classList.toggle("show");
-    hamburger.classList.toggle("active");
-    overlay.classList.toggle("show");
-  }
-
-  hamburger.addEventListener("click", toggleMenu);
-  overlay.addEventListener("click", toggleMenu); // close when clicking outside
+  menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
 </script>
+
 
 
 

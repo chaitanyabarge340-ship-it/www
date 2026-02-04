@@ -832,30 +832,50 @@ function slide(dir) {
       // Redirect to a thank-you page (create /thank-you.html)
       window.location.href = '/thank-you.html';
     }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navbar = document.getElementById('navbar');
+  const overlay = document.getElementById('overlay');
 
+  // Check if elements exist to avoid errors
+  if (hamburger && navbar && overlay) {
+    hamburger.addEventListener('click', () => {
+      // Toggle classes
+      const isOpen = navbar.classList.toggle('active');
+      hamburger.classList.toggle('open');
+      overlay.classList.toggle('active');
+      
+      // Stop the background from scrolling when menu is open
+      document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    });
 
-    const hamburger = document.getElementById('hamburger');
-const navbar = document.getElementById('navbar');
-const overlay = document.getElementById('overlay');
+    // Close menu when clicking the darkened overlay
+    overlay.addEventListener('click', () => {
+      navbar.classList.remove('active');
+      hamburger.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
 
-function toggleMenu() {
-  hamburger.classList.toggle('open');   // Animates the bars to "X"
-  navbar.classList.toggle('active');    // Slides the menu
-  overlay.classList.toggle('active');   // Shows the background dim
-}
-
-hamburger.addEventListener('click', toggleMenu);
-overlay.addEventListener('click', toggleMenu);
-
-// Close menu when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navbar.classList.remove('active');
-    overlay.classList.remove('active');
-  });
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        hamburger.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+  }
 });
   </script>
+
+
+
+
+
+
 
   <meta name="robots" content="index, follow">
 

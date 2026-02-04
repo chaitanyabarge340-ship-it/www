@@ -846,4 +846,72 @@ font-display: swap;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(30,94,255,0.35);
 }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001;
+  padding: 5px;
+}
 
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: currentColor; /* Adapts to Theme */
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- The "X" Animation Logic --- */
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0; /* Hide middle bar */
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap; /* Allows hamburger to drop below if space is tight */
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: flex;
+    order: 3; /* Positions it after logo and actions */
+  }
+
+  .nav-actions {
+    order: 2;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: inherit; /* Theme aware */
+    display: flex;
+    flex-direction: column;
+    padding: 100px 20px;
+    transition: left 0.4s ease;
+    z-index: 1000;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+  }
+
+  .navbar.active {
+    left: 0;
+  }
+  
+  #overlay.active {
+    display: block; /* Ensure it shows when menu is open */
+  }
+}

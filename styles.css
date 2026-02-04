@@ -915,3 +915,202 @@ font-display: swap;
     display: block; /* Ensure it shows when menu is open */
   }
 }
+@media (max-width: 768px) {
+  /* 1. Reset the main container to keep things tidy */
+  .container.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 10px 20px;
+  }
+
+  /* 2. Fix the Sidebar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Fully hidden off-screen */
+    width: 280px;
+    height: 100vh;
+    background-color: #1a1a1a; /* Match your dark theme or use 'inherit' */
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px;
+    transition: 0.4s ease-in-out;
+    z-index: 1000;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+  }
+
+  /* 3. When active, slide it in */
+  .navbar.active {
+    left: 0;
+  }
+
+  /* 4. Fix the links inside the sidebar */
+  .nav-links {
+    display: flex;
+    flex-direction: column; /* Stack them vertically */
+    gap: 20px;
+    text-align: left;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    color: white; /* Ensure visibility */
+    text-decoration: none;
+    display: block;
+    width: 100%;
+  }
+
+  /* 5. Keep the button on top and visible */
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+    position: relative;
+  }
+
+  /* 6. Hide the overlay by default */
+  #overlay {
+    display: none;
+  }
+
+  #overlay.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+  }
+}
+/* --- Hamburger Icon Base --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1100; /* Higher than the navbar */
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Make the bars WHITE */
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff; /* Forced white for visibility */
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* When open, move the "X" to the top right of the sidebar */
+  .hamburger.open {
+    position: fixed;
+    top: 20px;
+    left: 220px; /* Adjust this so it sits at the edge of your 280px sidebar */
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px; /* Sidebar width */
+    height: 100vh;
+    background-color: #1a1a1a; /* Dark background to contrast white text */
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 20px 20px; /* Added top padding to clear the "X" */
+    transition: left 0.4s ease-in-out;
+    z-index: 1000;
+  }
+
+  .navbar.active {
+    left: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between links */
+  }
+
+  .nav-links a {
+    color: white !important;
+    font-size: 1.1rem;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+}
+/* --- Hamburger Icon with Border Box --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: transparent;
+  
+  /* The Box Style */
+  border: 2px solid #ffffff; /* White border */
+  border-radius: 8px;        /* Rounded corners */
+  padding: 8px;             /* Space inside the box */
+  
+  /* Positioning to the Left */
+  position: relative;
+  z-index: 1100;
+  margin-left: 15px;         /* Distance from the left edge */
+  width: fit-content;
+}
+
+/* Ensure bars are white inside the box */
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff; 
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Keep the 'X' inside the box on the left when open */
+  .hamburger.open {
+    position: fixed; /* Keeps it visible over the sidebar */
+    top: 20px;
+    left: 20px;
+    margin-left: 0;
+    border-color: #ffffff; /* Keep border white in dark sidebar */
+  }
+
+  /* Sidebar adjustment to prevent overlapping */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #1a1a1a; /* Dark background */
+    display: flex;
+    flex-direction: column;
+    
+    /* Extra top padding so links start BELOW the boxed 'X' */
+    padding: 100px 20px 20px 20px; 
+    transition: left 0.4s ease-in-out;
+    z-index: 1000;
+  }
+
+  .navbar.active {
+    left: 0;
+  }
+}
+

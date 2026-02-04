@@ -218,22 +218,12 @@
   <!-- Header -->
  <header>
   <div class="container nav">
-
-    <!-- BRAND / LOGO -->
     <div class="brand">
       <div class="logo-header">
         <img src="logo.png" alt="Ratan Plasfab Logo" class="site-logo">
       </div>
     </div>
 
-    <!-- HAMBURGER (MOBILE ONLY) -->
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
       <div class="nav-links">
         <a href="#home">Home</a>
@@ -242,25 +232,20 @@
         <a class="btn" href="https://www.ratanplasfab.in/gallery/">Gallery</a>
         <a href="#quote">Get Quote</a>
       </div>
-
     </nav>
-  
 
-<div id="overlay"></div>
+    <div id="overlay"></div>
 
-
-    <!-- ACTIONS -->
     <div class="nav-actions">
-      <a class="btn btn-success"
-         href="https://wa.me/919822677223?text=Hi%20Ratan%20Plasfab%20-%20I%20want%20a%20quote"
-         target="_blank" rel="noopener">
-        WhatsApp
-      </a>
-      <button class="btn btn-outline" id="themeToggle" aria-label="Toggle theme">
-        Dark / Light
-      </button>
+      <a class="btn btn-success" href="https://wa.me/919822677223" target="_blank">WhatsApp</a>
+      <button class="btn btn-outline" id="themeToggle">Dark / Light</button>
     </div>
 
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
   </div>
 </header>
   <div class="overlay" id="overlay"></div>
@@ -856,6 +841,27 @@ function slide(dir) {
 
 
   <meta name="robots" content="index, follow">
+  const hamburger = document.getElementById('hamburger');
+const navbar = document.getElementById('navbar');
+const overlay = document.getElementById('overlay');
+
+function toggleMenu() {
+  hamburger.classList.toggle('open');   // Animates the bars to "X"
+  navbar.classList.toggle('active');    // Slides the menu
+  overlay.classList.toggle('active');   // Shows the background dim
+}
+
+hamburger.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navbar.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+});
 </body>
 </html>
 </body>

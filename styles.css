@@ -1113,4 +1113,212 @@ font-display: swap;
     left: 0;
   }
 }
+:root {
+    --bg-dark: #0b1e2d;
+    --blue-line: #4db8ff;
+    --white: #ffffff;
+}
+
+.work-process {
+    background-color: var(--bg-dark);
+    padding: 100px 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.process-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.process-item {
+    position: relative;
+    width: 260px;
+    padding: 50px 20px;
+    text-align: center;
+    /* The L-Shaped Border Style */
+    border-top: 2px solid var(--blue-line);
+    border-right: 2px solid var(--blue-line);
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-radius: 0 50px 0 50px; /* Matching the screenshot curves */
+    transition: 0.4s ease;
+}
+
+/* Stagger Effect: Moves the 2nd row slightly down for a better flow */
+@media (min-width: 900px) {
+    .process-item:nth-child(n+4) {
+        margin-top: 40px;
+    }
+}
+
+.step-no {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--white);
+    opacity: 0.9;
+}
+
+.process-icon {
+    font-size: 45px;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.process-item h3 {
+    color: var(--white);
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Hover Effect: Complete the border on hover */
+.process-item:hover {
+    background: rgba(77, 184, 255, 0.08);
+    border-bottom-color: var(--blue-line);
+    border-left-color: var(--blue-line);
+    transform: scale(1.03);
+}
+
+/* Mobile View: Stack them vertically */
+@media (max-width: 600px) {
+    .process-item {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+/* Add this to your CSS file */
+.process-item:nth-child(3) .process-icon i {
+    transform: perspective(100px) rotateY(-15deg);
+    display: inline-block;
+}
+.testimonials-section {
+  background: linear-gradient(180deg, #0b1220, #020617);
+  padding: 90px 20px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.testimonials-container {
+  max-width: 1300px;
+  margin: auto;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 38px;
+  color: #f8fafc;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(250,204,21,0.12);
+  border: 1px solid rgba(250,204,21,0.35);
+  padding: 10px 18px;
+  border-radius: 999px;
+  color: #facc15;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 45px;
+}
+
+.rating-badge span {
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+/* Slider */
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-slider {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.testimonials-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+.testimonial-card {
+  flex: 0 0 320px;
+  background: #020617;
+  padding: 34px 30px;
+  border-radius: 18px;
+  border: 1px solid rgba(148,163,184,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+  text-align: left;
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: "“";
+  font-size: 70px;
+  color: rgba(148,163,184,0.15);
+  position: absolute;
+  top: 12px;
+  right: 22px;
+}
+
+.stars { color: #facc15; font-size: 18px; margin-bottom: 14px; }
+.review-text { color: #e5e7eb; font-size: 15px; line-height: 1.75; margin-bottom: 22px; }
+
+.reviewer {
+  font-size: 15px;
+  color: #f8fafc;
+  font-weight: 600;
+}
+.reviewer span {
+  display: block;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(2,6,23,0.9);
+  border: 1px solid rgba(148,163,184,0.3);
+  color: #f8fafc;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+.arrow.left { left: -10px; }
+.arrow.right { right: -10px; }
+.arrow:hover { color: #facc15; border-color: #facc15; }
+
+@media (max-width: 768px) {
+  .arrow { display: none; }
+  .testimonials-section h2 { font-size: 30px; }
+}
 

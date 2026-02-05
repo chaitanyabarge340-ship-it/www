@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Download Brochure | Ratan Plasfab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HX98Y4XZM3"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-HX98Y4XZM3');
+</script>
+
+<style>
+body{font-family:Arial;background:#f5f7fb;margin:0}
+.container{max-width:900px;margin:auto;padding:40px}
+.box{background:#fff;padding:40px;border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,.08)}
+input,button{width:100%;padding:14px;margin-bottom:12px;font-size:15px}
+button{background:#0052cc;color:#fff;border:none;border-radius:8px;cursor:pointer}
+button:hover{background:#003d99}
+
+/* Popup */
+.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6)}
+.popup-content{background:#fff;padding:30px;border-radius:10px;max-width:400px;margin:15% auto;text-align:center}
+.popup-content h2{color:#0b2b5c}
+.popup-content button{margin-top:15px;background:#25d366}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="box">
+<h1>Download Our Brochure</h1>
+<p>Fill the form to receive our uPVC Windows & Doors brochure.</p>
+
+<form id="brochureForm">
+  <!-- WEB3FORMS REQUIRED -->
+  <input type="hidden" name="access_key" value="66bfcfda-a7a8-4b94-b3d4-e9a25356cf93">
+  <input type="hidden" name="subject" value="New Brochure Lead - Ratan Plasfab">
+  <input type="hidden" name="from_name" value="Ratan Plasfab Website">
+
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="tel" name="phone" placeholder="Mobile Number" required>
+  <input type="email" name="email" placeholder="Email Address" required>
+
+  <button type="submit">Download Brochure</button>
+</form>
+</div>
+</div>
+
+<!-- THANK YOU POPUP -->
+<div class="popup" id="thankYouPopup">
+  <div class="popup-content">
+    <h2>Thank You!</h2>
+    <p>Your brochure is opening.<br>Our team will contact you shortly.</p>
+    <button onclick="openWhatsApp()">Chat on WhatsApp</button>
+  </div>
+</div>
+
+<script>
+document.getElementById("brochureForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  /* 1️⃣ SEND TO WEB3FORMS */
+  fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    if(data.success){
+
+      /* 2️⃣ GA EVENT */
+      gtag('event','brochure_download',{
+        event_category:'Brochure',
+        event_label:'Ratan Plasfab'
+      });
+
+      /* 3️⃣ OPEN PDF */
+      window.open('files/ratan-plasfab-brochure.pdf','_blank');
+
+      /* 4️⃣ SHOW POPUP */
+      document.getElementById("thankYouPopup").style.display="block";
+
+      /* 5️⃣ AUTO WHATSAPP */
+      openWhatsApp();
+
+      form.reset();
+    }
+  });
+});
+
+function openWhatsApp(){
+  let msg = "Hi, I downloaded your brochure and want more details.";
+  window.open(
+    "https://wa.me/919822677223?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>

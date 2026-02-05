@@ -442,130 +442,130 @@
       </div>
     </div>
   </section>
+  
+  
+<!-- ========= benefit section ======== -->
+
+<style>
+    /* Add this to your main style block at the top, or keep it here */
+    .benefits-wrapper-section {
+        background-color: #0b1e2d; /* Matching your theme */
+        padding: 80px 0;
+        width: 100%;
+    }
+
+    .benefits-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .benefit-card {
+        position: relative;
+        flex: 1;
+        min-width: 220px;
+        max-width: 260px;
+        padding: 50px 20px;
+        text-align: center;
+        /* The L-Shaped Border Theme from your screenshot */
+        border-top: 2px solid #4db8ff;
+        border-right: 2px solid #4db8ff;
+        border-bottom: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-radius: 0 45px 0 45px;
+        transition: all 0.4s ease;
+    }
+
+    /* Staggered effect for the bottom row */
+    @media (min-width: 992px) {
+        .benefit-card:nth-child(n+5) {
+            margin-top: 40px;
+        }
+    }
+
+    .benefit-card:hover {
+        border-bottom-color: #4db8ff;
+        border-left-color: #4db8ff;
+        background: rgba(77, 184, 255, 0.05);
+        transform: translateY(-8px);
+    }
+
+    .icon-box {
+        font-size: 50px;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    .benefit-card h3 {
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    /* Fix for the top dark patch/gap */
+    header {
+        margin-bottom: 0 !important;
+    }
+    .hero {
+        margin-top: 0 !important;
+    }
+</style>
+
+<section class="benefits-wrapper-section">
+    <div class="benefits-grid">
+       <h2 class="section-title">Benefits of our Windows & Doors</h2>
+        <div class="benefit-card">
+            <div class="icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h3>Complete Design Freedom</h3>
+        </div>
+
+        <div class="benefit-card">
+            <div class="icon-box"><i class="fa-solid fa-volume-xmark"></i></div>
+            <h3>Noise Insulation</h3>
+        </div>
+
+        <div class="benefit-card">
+            <div class="icon-box"><i class="fa-solid fa-cloud-showers-water"></i></div>
+            <h3>Rainwater Insulation</h3>
+        </div>
+
+        <div class="benefit-card">
+            <div class="icon-box"><i class="fa-solid fa-cloud-bolt"></i></div>
+            <h3>Storm Resistant</h3>
+        </div>
+
+        <div class="benefit-card">
+            <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3>Low Maintenance</h3>
+        </div>
+
+        <div class="benefit-card">
+            <div class="icon-box"><i class="fa-solid fa-faucet-drip"></i></div>
+            <h3>NO RUSTING</h3>
+        </div>
+
+        <div class="benefit-card">
+            <div class="icon-box"><i class="fa-solid fa-wind"></i></div>
+            <h3>DUST RESISTANT</h3>
+        </div>
+    </div>
+</section>
+
+    
+
+
+
 
 <!-- ================== TESTIMONIALS START ================== -->
 <style>
-.testimonials-section {
-  background: linear-gradient(180deg, #0b1220, #020617);
-  padding: 90px 20px;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-}
 
-.testimonials-container {
-  max-width: 1300px;
-  margin: auto;
-  text-align: center;
-}
-
-.testimonials-section h2 {
-  font-size: 38px;
-  color: #f8fafc;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  color: #94a3b8;
-  margin-bottom: 18px;
-  font-size: 16px;
-}
-
-.rating-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(250,204,21,0.12);
-  border: 1px solid rgba(250,204,21,0.35);
-  padding: 10px 18px;
-  border-radius: 999px;
-  color: #facc15;
-  font-weight: 600;
-  font-size: 15px;
-  margin-bottom: 45px;
-}
-
-.rating-badge span {
-  color: #e5e7eb;
-  font-size: 14px;
-}
-
-/* Slider */
-.slider-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.testimonials-slider {
-  display: flex;
-  gap: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-.testimonials-slider::-webkit-scrollbar {
-  display: none;
-}
-
-/* Card */
-.testimonial-card {
-  flex: 0 0 320px;
-  background: #020617;
-  padding: 34px 30px;
-  border-radius: 18px;
-  border: 1px solid rgba(148,163,184,0.15);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
-  text-align: left;
-  position: relative;
-}
-
-.testimonial-card::before {
-  content: "“";
-  font-size: 70px;
-  color: rgba(148,163,184,0.15);
-  position: absolute;
-  top: 12px;
-  right: 22px;
-}
-
-.stars { color: #facc15; font-size: 18px; margin-bottom: 14px; }
-.review-text { color: #e5e7eb; font-size: 15px; line-height: 1.75; margin-bottom: 22px; }
-
-.reviewer {
-  font-size: 15px;
-  color: #f8fafc;
-  font-weight: 600;
-}
-.reviewer span {
-  display: block;
-  font-size: 13px;
-  color: #94a3b8;
-}
-
-/* Arrows */
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(2,6,23,0.9);
-  border: 1px solid rgba(148,163,184,0.3);
-  color: #f8fafc;
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 5;
-}
-.arrow.left { left: -10px; }
-.arrow.right { right: -10px; }
-.arrow:hover { color: #facc15; border-color: #facc15; }
-
-@media (max-width: 768px) {
-  .arrow { display: none; }
-  .testimonials-section h2 { font-size: 30px; }
-}
 </style>
 
 <section class="testimonials-section">
@@ -666,7 +666,54 @@ function slide(dir) {
 </script>
 <!-- ================== TESTIMONIALS END ================== -->
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+<section class="work-process">
+    <div class="process-grid">
+       <h2 class="section-title">Our Work Process</h2>
+        <div class="process-item">
+            <span class="step-no">01</span>
+            <div class="process-icon"><i class="fa-solid fa-comments"></i></div>
+            <h3>Easy Connect<br>With Expert</h3>
+        </div>
+
+        <div class="process-item">
+            <span class="step-no">02</span>
+            <div class="process-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+            <h3>On-Site<br>Measurement</h3>
+        </div>
+
+        <div class="process-item">
+            <span class="step-no">03</span>
+            <div class="process-icon"><i class="fa-solid fa-border-all"></i></div>
+            <h3>Suggestions For<br>Window Designs</h3>
+        </div>
+
+        <div class="process-item">
+            <span class="step-no">04</span>
+            <div class="process-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <h3>Detailed<br>Quotation</h3>
+        </div>
+
+        <div class="process-item">
+            <span class="step-no">05</span>
+            <div class="process-icon"><i class="fa-solid fa-industry"></i></div>
+            <h3>Precision<br>Fabrication</h3>
+        </div>
+
+        <div class="process-item">
+            <span class="step-no">06</span>
+            <div class="process-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3>Professional<br>Installation</h3>
+        </div>
+
+        <div class="process-item">
+            <span class="step-no">07</span>
+            <div class="process-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3>After Sales<br>Support</h3>
+        </div>
+    </div>
+</section>
 
   <!-- Quote form -->
   <section id="quote">
@@ -870,15 +917,7 @@ function slide(dir) {
   }
 });
   </script>
-
-
-
-
-
-
-
   <meta name="robots" content="index, follow">
-
 </body>
 </html>
 </body>

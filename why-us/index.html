@@ -123,15 +123,24 @@ body.dark-mode .brand-logo {
       cursor: pointer;
     }
 
-    .image-overlay {
+   .image-overlay {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
   background: linear-gradient(180deg, rgba(20,58,136,0.16), rgba(20,161,147,0.12));
-  height: 280px;
-  display: grid;
-  place-items: center;
+  min-height: 220px;   /* 🔥 CHANGE */
+  height: auto;        /* 🔥 CHANGE */
+  padding: 20px;       /* 🔥 ADD */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .image-overlay {
+    min-height: 180px;
+  }
 }
 
 .background-image {
@@ -264,6 +273,37 @@ body.dark-mode .brand-logo {
       color: var(--primary-300); text-decoration: none; border-bottom: 1px dashed var(--border);
     }
     a.link:hover { color: var(--primary); }
+
+    @media (max-width: 768px) {
+  section {
+    padding: 32px 0;
+  }
+
+  .grid,
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+}
+.card {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 16px;
+  }
+}
+h1, h2, h3, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
   </style>
 </head>
 <body>
@@ -512,6 +552,7 @@ body.dark-mode .brand-logo {
 </body>
 
 </html>
+
 
 
 

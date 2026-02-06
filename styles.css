@@ -1245,6 +1245,21 @@ font-display: swap;
     transform: perspective(100px) rotateY(-15deg);
     display: inline-block;
 }
+
+/* MATCH WORK PROCESS SHADOW WITH BENEFITS */
+.process-item {
+    background: #ffffff;
+    box-shadow: var(--shadow);
+    transition: all 0.35s ease;
+}
+
+/* HOVER – SAME DEPTH AS BENEFITS */
+.process-item:hover {
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+}
+
+/*testimonials section*/
+
 .testimonials-section {
  background: #f8fafc;
   padding: 90px 20px;

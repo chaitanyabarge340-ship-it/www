@@ -30,9 +30,10 @@
     font-family:"Segoe UI",sans-serif;
 }
 
+/* BACKGROUND */
 body{
-    background:radial-gradient(circle at top,#13233d 0%,#05070c 60%);
-    color:#fff;
+    background:#ffffff;
+    color:#111;
 }
 
 /* HERO */
@@ -42,11 +43,12 @@ body{
 .hero h1{
     font-size:40px;
     font-weight:600;
+    color:#111;
 }
 .hero p{
     margin-top:12px;
     max-width:650px;
-    color:#b6c0d1;
+    color:#555;
     line-height:1.6;
 }
 
@@ -64,9 +66,9 @@ body{
     height:240px;
     border-radius:20px;
     overflow:hidden;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.1);
-    box-shadow:0 25px 50px rgba(0,0,0,.45);
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
     cursor:pointer;
     opacity:0;
     transform:translateY(40px);
@@ -78,7 +80,7 @@ body{
 }
 .card:hover{
     transform:translateY(-8px);
-    box-shadow:0 45px 90px rgba(100,160,255,.35);
+    box-shadow:0 35px 70px rgba(0,0,0,.15);
 }
 
 /* IMAGE */
@@ -96,7 +98,7 @@ body{
 .overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(to top,rgba(0,0,0,.7),transparent);
+    background:linear-gradient(to top,rgba(255,255,255,.95),rgba(255,255,255,.3));
     display:flex;
     align-items:flex-end;
     padding:18px;
@@ -108,6 +110,7 @@ body{
 }
 .overlay h3{
     font-size:16px;
+    color:#111;
 }
 
 /* LOAD MORE */
@@ -119,8 +122,8 @@ body{
     padding:14px 34px;
     border-radius:40px;
     border:none;
-    background:linear-gradient(135deg,#6ea8ff,#3f7cff);
-    color:#000;
+    background:linear-gradient(135deg,#3f7cff,#6ea8ff);
+    color:#fff;
     font-size:15px;
     font-weight:600;
     cursor:pointer;
@@ -133,7 +136,7 @@ body{
 .lightbox{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.85);
+    background:rgba(0,0,0,.8);
     display:none;
     justify-content:center;
     align-items:center;
@@ -150,12 +153,14 @@ body{
     right:40px;
     font-size:32px;
     cursor:pointer;
+    color:#fff;
 }
 
 /* RESPONSIVE */
 @media(max-width:600px){
     .hero h1{font-size:30px;}
 }
+
 </style>
 </head>
 
@@ -344,6 +349,7 @@ cards.forEach(c=>obs.observe(c));
 
 </body>
 </html>
+
 
 
 

@@ -1384,3 +1384,125 @@ font-display: swap;
   .testimonials-section h2 { font-size: 30px; }
 }
 
+/*footer css */
+
+.site-footer {
+  background: #f8fafc;
+  padding: 80px 20px 30px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-heading {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #0f172a;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.footer-link a,
+.footer-links a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-brochure-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-brochure-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.footer-map iframe {
+  width: 100%;
+  height: 220px;
+  border: 0;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.footer-bottom {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* footer links social */
+
+/* Footer Social Section */
+.footer-social {
+  margin-top: 20px;
+  display: flex;
+  gap: 14px;
+}
+
+/* Social Button Style */
+.social-btn {
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.social-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Platform Colors */
+.social-btn.whatsapp {
+  color: #25d366;
+}
+
+.social-btn.email {
+  color: #4db8ff;
+}
+
+.social-btn.instagram {
+  color: #e1306c;
+}
+

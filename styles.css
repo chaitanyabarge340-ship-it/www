@@ -505,6 +505,30 @@ section {
     box-shadow: 0 28px 65px rgba(0,0,0,.15);
 }
 
+.gallery-btn-wrapper{
+    text-align:center;
+    margin-top:40px;
+}
+
+.gallery-btn{
+    display:inline-block;
+    padding:14px 38px;
+    border-radius:40px;
+    background:#ffffff;
+    color:#000;
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid #d1d5db;
+    transition:.3s ease;
+}
+
+.gallery-btn:hover{
+    background:#f3f4f6;
+    transform:translateY(-2px);
+}
+
+
 /* Form */
 .form {
 	display: grid;

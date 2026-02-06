@@ -458,80 +458,94 @@
   
 <!-- ========= benefit section ======== -->
 
-<style>
-    /* Add this to your main style block at the top, or keep it here */
-    .benefits-wrapper-section {
-        background-color: #0b1e2d; /* Matching your theme */
-        padding: 80px 0;
-        width: 100%;
-    }
+/* ================= Benefits Section – MATCHED WITH WORK PROCESS ================= */
 
-    .benefits-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 25px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
+  <style>
+.benefits-wrapper-section {
+    background: #f1f5f9; /* Same tone as work process */
+    padding: 100px 20px;
+    width: 100%;
+    font-family: 'Inter', system-ui, sans-serif;
+}
 
+.benefits-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Card matches process-item sizing & style */
+.benefit-card {
+    position: relative;
+    width: 260px;
+    padding: 50px 20px;
+    text-align: center;
+
+    /* Same L-border logic */
+    border-top: 2px solid var(--accent);
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-radius: 0 50px 0 50px;
+
+    background: #ffffff;
+    box-shadow: var(--shadow);
+    transition: all 0.35s ease;
+}
+
+/* Stagger bottom row exactly like work-process */
+@media (min-width: 900px) {
+    .benefit-card:nth-child(n+4) {
+        margin-top: 40px;
+    }
+}
+
+/* Hover identical to work-process */
+.benefit-card:hover {
+    background: rgba(37, 99, 235, 0.06);
+    border-bottom-color: var(--accent);
+    border-left-color: var(--accent);
+    transform: scale(1.03);
+}
+
+/* Icon matches process icon style */
+.icon-box {
+    font-size: 46px;
+    color: var(--accent);
+    margin-bottom: 18px;
+}
+
+/* Text hierarchy aligned */
+.benefit-card h3 {
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Mobile stacking – same feel as process section */
+@media (max-width: 600px) {
     .benefit-card {
-        position: relative;
-        flex: 1;
-        min-width: 220px;
-        max-width: 260px;
-        padding: 50px 20px;
-        text-align: center;
-        /* The L-Shaped Border Theme from your screenshot */
-        border-top: 2px solid #4db8ff;
-        border-right: 2px solid #4db8ff;
-        border-bottom: 2px solid transparent;
-        border-left: 2px solid transparent;
-        border-radius: 0 45px 0 45px;
-        transition: all 0.4s ease;
+        width: 100%;
+        max-width: 320px;
     }
+}
 
-    /* Staggered effect for the bottom row */
-    @media (min-width: 992px) {
-        .benefit-card:nth-child(n+5) {
-            margin-top: 40px;
-        }
-    }
+    </style>
 
-    .benefit-card:hover {
-        border-bottom-color: #4db8ff;
-        border-left-color: #4db8ff;
-        background: rgba(77, 184, 255, 0.05);
-        transform: translateY(-8px);
-    }
-
-    .icon-box {
-        font-size: 50px;
-        color: #ffffff;
-        margin-bottom: 20px;
-    }
-
-    .benefit-card h3 {
-        color: #ffffff;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        margin: 0;
-        text-transform: uppercase;
-    }
-
-    /* Fix for the top dark patch/gap */
-    header {
-        margin-bottom: 0 !important;
-    }
-    .hero {
-        margin-top: 0 !important;
-    }
-</style>
-
-    <h2 class="section-title">Benefits of our Windows & Doors</h2>
+    
 <section class="benefits-wrapper-section">
+  <div class="section-heading">
+  <h2>Benefits</h2>
+  <p>Premium UPVC windows & doors engineered for durability and elegance</p>
+</div>
+
     <div class="benefits-grid">
         <div class="benefit-card">
             <div class="icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
@@ -680,9 +694,14 @@ function slide(dir) {
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-  <h2 class="section-title">Our Work Process</h2>
+  
 <section class="work-process">
-    <div class="process-grid">
+  <div class="section-heading">
+  <div class="section-heading">
+  <h2>Our Work Process</h2>
+  <p>From consultation to installation, we follow a clear and professional process</p>
+</div>
+        <div class="process-grid">
         <div class="process-item">
             <span class="step-no">01</span>
             <div class="process-icon"><i class="fa-solid fa-comments"></i></div>

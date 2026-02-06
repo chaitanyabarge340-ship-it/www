@@ -825,51 +825,87 @@ function slide(dir) {
 
 
   <!-- Footer -->
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <div class="brand">      
-        </div>
+<footer class="site-footer">
+  <div class="container footer-grid">
 
-          <h3 class="footer-heading">Address</h3>
-        <p class="small" style="margin-top:8px;">Factory Address - Ratan Plasfab, A-33 Mini MIDC,
-                                                 Koregaon - 415501, Satara, Maharashtra</p>
-        <p class="small">Wed–Mon: 09:00 AM – 6:00 PM</p>
-      </div>
-      <div>
-        <h4 style="margin:0 0 8px;">Contact</h4>
-        <p class="small">Phone: +91 98226 77223</p>
-        <p class="small">Email: ratanplasfab@gmail.com</p>
-        <p class="small">WhatsApp: <a href="https://wa.me/919822677223" target="_blank" rel="noopener">Chat now</a></p>
-        <p class="small">Book Site-Visit: <a href="https://ratanplasfab.setmore.com/" target="_blank" rel="noopener">Book Now</a></p>
-        
-      </div>
-      <div>
-        <h4 style="margin:0 0 8px;">Quick links</h4>
-        <p class="small"><a href="#products">Products</a> • <a href="#gallery">Gallery</a> • <a href="#quote">Get Quote</a></p>
-      <div class="map-container">
-  <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.336929217366!2d74.17502841045476!3d17.681536694195447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2351eddccc005%3A0xa2c23a76cdc5fc86!2sRatan%20Plasfab!5e0!3m2!1sen!2sin!4v1764242280704!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      
-   Our Location On Maps
-  </iframe>
-</div>
-        <script>
-  function initMap() {
-    const location = { lat: 17.6913, lng: 74.0007 }; // Satara coords
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 14,
-      center: location,
-    });
-    const marker = new google.maps.Marker({
-      position: location,
-      map: map,
-      title: "Ratan Plasfab Satara",
-    });
-  }
-</script>
-      </div>
+    <!-- COLUMN 1: ADDRESS -->
+    <div class="footer-col">
+      <h3 class="footer-heading">Address</h3>
+      <p class="footer-text">
+        Factory Address – Ratan Plasfab<br>
+        A-33 Mini MIDC, Koregaon – 415501<br>
+        Satara, Maharashtra
+      </p>
+      <p class="footer-text">
+        Wed – Mon: 09:00 AM – 06:00 PM
+      </p>
     </div>
-  </footer>
+
+    <!-- COLUMN 2: CONTACT -->
+    <div class="footer-col">
+      <h3 class="footer-heading">Contact</h3>
+      <p class="footer-text">📞 +91 98226 77223</p>
+      <p class="footer-text">✉️ ratanplasfab@gmail.com</p>
+      <p class="footer-link">
+        💬 <a href="https://wa.me/919822677223" target="_blank">Chat on WhatsApp</a>
+      </p>
+      <p class="footer-link">
+        📍 <a href="https://ratanplasfab.setmore.com/" target="_blank">
+          Book Free Site Visit
+        </a>
+      </p>
+    </div>
+
+    <!-- COLUMN 3: QUICK LINKS + BROCHURE -->
+    <div class="footer-col">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="https://www.ratanplasfab.in/products/">Products</a></li>
+        <li><a href="https://www.ratanplasfab.in/gallery/">Gallery</a></li>
+        <li><a href="#quote">Get Quote</a></li>
+         <li><a href="#https://www.ratanplasfab.in/privacy.html">Privacy Policy</a></li>
+      </ul>
+
+      <a href="files/ratan-plasfab-brochure.pdf"
+         class="footer-brochure-btn"
+         download>
+        ⬇ Download Brochure
+      </a>
+    </div>
+
+    <!-- Footer social links -->
+    <div class="footer-social">
+  <a href="https://wa.me/919822677223" target="_blank" aria-label="WhatsApp" class="social-btn whatsapp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="mailto:ratanplasfab@gmail.com" aria-label="Email" class="social-btn email">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+  <a href="https://www.instagram.com/ratan_plasfab" target="_blank" aria-label="Instagram" class="social-btn instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+</div>
+
+
+    <!-- COLUMN 4: MAP -->
+    <div class="footer-col footer-map">
+      <h3 class="footer-heading">Our Location</h3>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.336929217366!2d74.17502841045476!3d17.681536694195447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2351eddccc005%3A0xa2c23a76cdc5fc86!2sRatan%20Plasfab!5e0!3m2!1sen!2sin!4v1764242280704!5m2!1sen!2sin"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Ratan Plasfab. All Rights Reserved.
+  </div>
+</footer>
+
 
   <script>
     // Dark / Light toggle

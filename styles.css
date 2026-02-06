@@ -1,16 +1,17 @@
 :root {
-	--bg: #0b0e12;
-	--surface: rgba(255, 255, 255, 0.08);
-	--card: rgba(255, 255, 255, 0.10);
-	--border: rgba(255, 255, 255, 0.18);
-	--text: #e9eef7;
-	--muted: #b8c2d6;
-	--accent: #4da3ff;
-	--accent-2: #72e3a3;
-	--danger: #ff6b6b;
-	--shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-	--blur: saturate(140%) blur(10px);
+	--bg: #f8fafc;
+	--surface: #ffffff;
+	--card: #ffffff;
+	--border: #e5e7eb;
+	--text: #0f172a;
+	--muted: #475569;
+	--accent: #2563eb;
+	--accent-2: #16a34a;
+	--danger: #dc2626;
+	--shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+	--blur: saturate(120%) blur(6px);
 }
+
 
 .hero-badges {
 	display: flex;
@@ -175,7 +176,10 @@ body {
 	margin: 0;
 	font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Noto Sans Devanagari", sans-serif;
 	color: var(--text);
-	background: radial-gradient(1200px 600px at 10% -10%, #12203a 0%, var(--bg) 60%) no-repeat fixed;
+
+	background: var(--bg);
+	color: var(--text);
+
 	line-height: 1.6;
 }
 
@@ -792,7 +796,7 @@ header {
 .footer-heading {
   font-size: 26px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text);
   margin-bottom: 12px;
   position: relative;
 }
@@ -1043,7 +1047,7 @@ font-display: swap;
   }
 
   .nav-links a {
-    color: white !important;
+   color: var(--text) !important;
     font-size: 1.1rem;
     padding: 10px;
     text-decoration: none;
@@ -1074,7 +1078,7 @@ font-display: swap;
 .bar {
   width: 25px;
   height: 3px;
-  background-color: #ffffff; 
+  background-color: var(--text); 
   transition: all 0.3s ease-in-out;
 }
 
@@ -1099,7 +1103,7 @@ font-display: swap;
     left: -100%;
     width: 280px;
     height: 100vh;
-    background-color: #1a1a1a; /* Dark background */
+    background-color: #ffffff; /* light background */
     display: flex;
     flex-direction: column;
     
@@ -1120,7 +1124,7 @@ font-display: swap;
 }
 
 .work-process {
-    background-color: var(--bg-dark);
+    background: #f1f5f9;
     padding: 100px 20px;
     font-family: 'Inter', sans-serif;
 }
@@ -1161,18 +1165,18 @@ font-display: swap;
     left: 20px;
     font-size: 30px;
     font-weight: 900;
-    color: var(--white);
+   color: var(--accent);
     opacity: 0.9;
 }
 
 .process-icon {
     font-size: 45px;
-    color: var(--white);
+    color: var(--accent);
     margin-bottom: 20px;
 }
 
 .process-item h3 {
-    color: var(--white);
+  color: var(--text);
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1201,7 +1205,7 @@ font-display: swap;
     display: inline-block;
 }
 .testimonials-section {
-  background: linear-gradient(180deg, #0b1220, #020617);
+ background: #f8fafc;
   padding: 90px 20px;
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
@@ -1263,11 +1267,11 @@ font-display: swap;
 /* Card */
 .testimonial-card {
   flex: 0 0 320px;
-  background: #020617;
+  background: #ffffff;
+	border: 1px solid var(--border);
+	box-shadow: var(--shadow);
   padding: 34px 30px;
   border-radius: 18px;
-  border: 1px solid rgba(148,163,184,0.15);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
   text-align: left;
   position: relative;
 }
@@ -1282,11 +1286,13 @@ font-display: swap;
 }
 
 .stars { color: #facc15; font-size: 18px; margin-bottom: 14px; }
-.review-text { color: #e5e7eb; font-size: 15px; line-height: 1.75; margin-bottom: 22px; }
+.review-text {
+	color: var(--muted);
+}
 
 .reviewer {
   font-size: 15px;
-  color: #f8fafc;
+  color: var(--text);
   font-weight: 600;
 }
 .reviewer span {

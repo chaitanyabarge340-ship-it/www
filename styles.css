@@ -1629,7 +1629,7 @@ font-display: swap;
 
   /* logo */
   header .site-logo{
-    height: 50px !important;
+    height: 55px !important;
   }
 
   /* hide right buttons */
@@ -1640,5 +1640,22 @@ font-display: swap;
   /* hamburger to extreme right */
   header .hamburger{
     margin-left: auto !important;
+  }
+}
+@media (max-width: 768px){
+
+  header{
+    height: 60px;              /* fix navbar height */
+  }
+
+  header .container.nav{
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .site-logo{
+    max-height: 55px;          /* logo cannot exceed header */
+    width: auto;
   }
 }

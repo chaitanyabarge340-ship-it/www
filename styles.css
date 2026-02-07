@@ -1606,3 +1606,39 @@ font-display: swap;
   }
 }
 
+/* ========= MOBILE HEADER LAYOUT REPAIR ========= */
+@media (max-width: 768px) {
+
+  /* force horizontal */
+  header .container.nav{
+    flex-direction: row !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* stop brand from full width */
+  header .brand{
+    width: auto !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* remove centering */
+  header .logo-header{
+    text-align: left !important;
+  }
+
+  /* logo */
+  header .site-logo{
+    height: 34px !important;
+  }
+
+  /* hide right buttons */
+  header .nav-actions{
+    display: none !important;
+  }
+
+  /* hamburger to extreme right */
+  header .hamburger{
+    margin-left: auto !important;
+  }
+}

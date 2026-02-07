@@ -1743,3 +1743,130 @@ font-display: swap;
   }
 
 }
+/* section */
+/* BENEFITS – match work process look */
+/* ================================
+   BENEFITS – PREMIUM VERSION
+================================ */
+
+/* base card */
+.benefit-card{
+  position: relative;
+  height: 220px;
+  width: 260px;
+  padding: 50px 20px;
+  text-align: center;
+  background: #ffffff;
+
+  border-top: 2px solid var(--blue-line);
+  border-right: 2px solid var(--blue-line);
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+
+  border-radius: 0 50px 0 50px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+
+  box-shadow: var(--shadow);
+  transition: all 0.4s ease;
+}
+
+/* icon */
+.benefit-card .icon-box{
+  font-size: 42px;
+  color: var(--accent);
+  transition: transform 0.4s ease;
+}
+
+/* title */
+.benefit-card h3{
+  color: var(--text);
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  margin:0;
+}
+
+/* ================================
+   NUMBER BADGE (auto)
+================================ */
+
+
+/* reset counter */
+.benefits-slider{
+  counter-reset: benefit;
+}
+
+/* ================================
+   NORMAL SLIDES
+================================ */
+.swiper-slide{
+  opacity:0.45;
+  transform: scale(0.9);
+  transition: all 0.4s ease;
+}
+
+/* ================================
+   ACTIVE SLIDE – HERO MOMENT
+================================ */
+.swiper-slide-active{
+  opacity:1;
+  transform: scale(1.05);
+}
+
+/* complete border automatically */
+.swiper-slide-active .benefit-card{
+  border-bottom-color: var(--blue-line);
+  border-left-color: var(--blue-line);
+}
+
+/* icon pop */
+.swiper-slide-active .icon-box{
+  transform: scale(1.2);
+}
+
+/* ================================
+   GLOW UNDER ACTIVE
+================================ */
+.swiper-slide-active .benefit-card::after{
+  content:"";
+  position:absolute;
+  bottom:-15px;
+  left:50%;
+  transform:translateX(-50%);
+  width:60%;
+  height:20px;
+  background: radial-gradient(rgba(77,184,255,0.35), transparent);
+  filter: blur(6px);
+  z-index:-1;
+}
+
+/* ================================
+   HOVER (still works)
+================================ */
+.benefit-card:hover{
+  background: rgba(77, 184, 255, 0.08);
+  border-bottom-color: var(--blue-line);
+  border-left-color: var(--blue-line);
+  transform: scale(1.06);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+}
+
+/* ================================
+   SOFT FLOAT ANIMATION
+================================ */
+@keyframes floatCard{
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(-4px); }
+  100%{ transform: translateY(0); }
+}
+
+.swiper-slide-active .benefit-card{
+  animation: floatCard 3s ease-in-out infinite;
+}
+

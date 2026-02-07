@@ -457,293 +457,61 @@
   
 <!-- ========= benefit section ======== -->
 
-  <style>
-.benefits-wrapper-section {
-    background: #f1f5f9; /* Same tone as work process */
-    padding: 10px 5px;
-    width: 100%;
-    font-family: 'Inter', system-ui, sans-serif;
-}
+   <section class="benefits-section">
 
-.benefits-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-/* Card matches process-item sizing & style */
-.benefit-card {
-    position: relative;
-    width: 260px;
-    padding: 50px 20px;
-    text-align: center;
-
-    /* Same L-border logic */
-    border-top: 2px solid var(--accent);
-    border-right: 2px solid var(--accent);
-    border-bottom: 2px solid transparent;
-    border-left: 2px solid transparent;
-    border-radius: 0 50px 0 50px;
-
-    background: #ffffff;
-    box-shadow: var(--shadow);
-    transition: all 0.35s ease;
-}
-
-/* Stagger bottom row exactly like work-process */
-@media (min-width: 900px) {
-    .benefit-card:nth-child(n+4) {
-        margin-top: 30px;
-    }
-}
-
-/* Hover identical to work-process */
-.benefit-card:hover {
-    background: rgba(37, 99, 235, 0.06);
-    border-bottom-color: var(--accent);
-    border-left-color: var(--accent);
-    transform: scale(1.03);
-}
-
-/* Icon matches process icon style */
-.icon-box {
-    font-size: 46px;
-    color: var(--accent);
-    margin-bottom: 18px;
-}
-
-/* Text hierarchy aligned */
-.benefit-card h3 {
-    color: var(--text);
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    line-height: 1.4;
-    text-transform: uppercase;
-    margin: 0;
-}
-
-/* Mobile stacking – same feel as process section */
-@media (max-width: 600px) {
-    .benefit-card {
-        width: 100%;
-        max-width: 320px;
-    }
-}
-   /* wrapper */
-/* slider reference */
-/* keep relative */
-.benefits-slider{
-  position: relative;
-  padding: 10px 10px;
-}
-
-/* arrows aligned to card center */
-.swiper-button-next,
-.swiper-button-prev{
-  top: 110px;                 /* half of 220 */
-  transform: translateY(-50%);
-  width:40px;
-  height:40px;
-  color:#2d5bff;
-  z-index:10;
-}
-
-.swiper-button-prev{ left: 5px; }
-.swiper-button-next{ right: 5px; }
-
-/* arrow icon */
-.swiper-button-next::after,
-.swiper-button-prev::after{
-  font-size:20px;
-}
-.swiper-button-next,
-.swiper-button-prev{
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-}
-.swiper-button-next,
-.swiper-button-prev{
-  position:absolute;
-  top:50% !important;
-  transform:translateY(-50%) !important;
-  margin-top:30px;          /* fine tune */
-  width:40px;
-  height:40px;
-  color:#2d5bff;
-  z-index:999;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after{
-  font-size:20px;
-}
-
-.benefits-slider{
-  position: relative;
-}
-
-/* this becomes the reference height */
-.slides-area{
-  position: relative;
-  padding: 20px 0;
-}
-
-/* perfect vertical center */
-.swiper-button-next,
-.swiper-button-prev{
-  top: 70%;
-  transform: translateY(-50%);
-  width:40px;
-  height:40px;
-  color:#2d5bff;
-  z-index:10;
-}
-
-.swiper-button-prev{ left: 0; }
-.swiper-button-next{ right: 0; }
-
-    /* make swiper reference */
-.benefits-slider{
-  position: relative;
-}
-
-/* arrows vertically center to slides */
-.benefits-slider .swiper-button-prev,
-.benefits-slider .swiper-button-next{
-  top: 90%;                 /* push below heading */
-  transform: translateY(-50%);
-}
-
-/* horizontal spacing */
-.benefits-slider .swiper-button-prev{
-  left: -5px;
-}
-
-.benefits-slider .swiper-button-next{
-  right: -5px;
-}
-
-/* ===== FORCE ARROW POSITION ===== */
-.benefits-slider .swiper-button-prev,
-.benefits-slider .swiper-button-next{
-  position: absolute !important;
-  top: 75% !important;
-  transform: translateY(-50%) !important;
-  z-index: 10 !important;
-}
-
-.benefits-slider .swiper-button-prev{
-  left: 10px !important;
-}
-
-.benefits-slider .swiper-button-next{
-  right: 10px !important;
-}
-
-    /* make slide content vertical */
-.benefit-card{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  gap:15px;              /* space between logo and text */
-}
-
-/* icon styling */
-.benefit-card .icon-box{
-  font-size:32px;
-}
-
-/* text */
-.benefit-card h3{
-  margin:0;
-}
-/* center benefit card inside swiper slide */
-.benefits-slider .swiper-slide{
-  display: flex !important;
-  justify-content: center !important;
-}
-.benefits-slider .swiper-slide{
-  height: auto;
-}
-    /* hard center everything inside each swiper slide */
-.benefits-slider .swiper-slide{
-  display: flex !important;
-  justify-content: center !important;
-}
-
-.benefits-slider .swiper-slide > *{
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-    /* let swiper calculate correct center */
-.benefits-slider .swiper-slide{
-  width: auto !important;
-}
-
-
-
-    </style>
-
-    <section>
-<div class="benefits-slider swiper">
   <div class="section-heading">
     <h2>Benefits</h2>
     <p>Premium UPVC windows & doors engineered for durability and elegance</p>
   </div>
 
-  <div class="swiper-wrapper">
+  <div class="benefits-slider swiper">
 
-    <div class="benefit-card swiper-slide">
-      <div class="icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-      <h3>Complete Design Freedom</h3>
+    <div class="swiper-wrapper">
+
+      <div class="benefit-card swiper-slide">
+        <div class="icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3>Complete Design Freedom</h3>
+      </div>
+
+      <div class="benefit-card swiper-slide">
+        <div class="icon-box"><i class="fa-solid fa-volume-xmark"></i></div>
+        <h3>Noise Insulation</h3>
+      </div>
+
+      <div class="benefit-card swiper-slide">
+        <div class="icon-box"><i class="fa-solid fa-cloud-showers-water"></i></div>
+        <h3>Rainwater Insulation</h3>
+      </div>
+
+      <div class="benefit-card swiper-slide">
+        <div class="icon-box"><i class="fa-solid fa-cloud-bolt"></i></div>
+        <h3>Storm Resistant</h3>
+      </div>
+
+      <div class="benefit-card swiper-slide">
+        <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <h3>Low Maintenance</h3>
+      </div>
+
+      <div class="benefit-card swiper-slide">
+        <div class="icon-box"><i class="fa-solid fa-faucet-drip"></i></div>
+        <h3>No Rusting</h3>
+      </div>
+
+      <div class="benefit-card swiper-slide">
+        <div class="icon-box"><i class="fa-solid fa-wind"></i></div>
+        <h3>Dust Resistant</h3>
+      </div>
+
     </div>
 
-    <div class="benefit-card swiper-slide">
-      <div class="icon-box"><i class="fa-solid fa-volume-xmark"></i></div>
-      <h3>Noise Insulation</h3>
-    </div>
-
-    <div class="benefit-card swiper-slide">
-      <div class="icon-box"><i class="fa-solid fa-cloud-showers-water"></i></div>
-      <h3>Rainwater Insulation</h3>
-    </div>
-
-    <div class="benefit-card swiper-slide">
-      <div class="icon-box"><i class="fa-solid fa-cloud-bolt"></i></div>
-      <h3>Storm Resistant</h3>
-    </div>
-
-    <div class="benefit-card swiper-slide">
-      <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-      <h3>Low Maintenance</h3>
-    </div>
-
-    <div class="benefit-card swiper-slide">
-      <div class="icon-box"><i class="fa-solid fa-faucet-drip"></i></div>
-      <h3>No Rusting</h3>
-    </div>
-
-    <div class="benefit-card swiper-slide">
-      <div class="icon-box"><i class="fa-solid fa-wind"></i></div>
-      <h3>Dust Resistant</h3>
-    </div>
+    <!-- arrows -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 
   </div>
-
-  <!-- arrows -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-</div>
-
-    
 </section>
+
 
 
 
@@ -1173,11 +941,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
-  <script>
-  new Swiper(".benefits-slider", {
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+new Swiper(".benefits-slider", {
   loop: true,
   centeredSlides: true,
-  slidesPerView: 1,   // ⭐ important
+  grabCursor: true,
   spaceBetween: 20,
 
   autoplay: {
@@ -1191,12 +962,14 @@ document.addEventListener("DOMContentLoaded", () => {
   },
 
   breakpoints: {
+    0: { slidesPerView: 1 },
+    600: { slidesPerView: 1.2 },
     768: { slidesPerView: 2 },
     1024: { slidesPerView: 3 }
   }
 });
+</script>
 
-  </script>
 
 </body>
 </html>

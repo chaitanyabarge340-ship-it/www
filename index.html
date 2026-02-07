@@ -535,16 +535,16 @@
 }
    /* wrapper */
 /* slider reference */
+/* keep relative */
 .benefits-slider{
   position: relative;
   padding: 30px 40px;
 }
 
-/* arrows perfectly aligned to cards */
+/* arrows aligned to card center */
 .swiper-button-next,
 .swiper-button-prev{
-  position:absolute;
-  top: 60%;                     /* move into card zone */
+  top: 110px;                 /* half of 220 */
   transform: translateY(-50%);
   width:40px;
   height:40px;
@@ -559,8 +559,8 @@
 .swiper-button-next::after,
 .swiper-button-prev::after{
   font-size:20px;
-  font-weight:bold;
 }
+
 
 
     </style>

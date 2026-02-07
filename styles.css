@@ -1695,3 +1695,18 @@ font-display: swap;
     margin-left: auto !important;
   }
 }
+@media (max-width: 768px){
+
+  /* remove hidden vertical push */
+  header .logo-header{
+    display: flex !important;
+    align-items: center !important;
+    height: 100%;
+  }
+
+  header .site-logo{
+    display: block !important;   /* removes bottom inline gap */
+    margin: 0 !important;
+  }
+
+}

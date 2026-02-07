@@ -10,6 +10,8 @@
   <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <meta name="msvalidate.01" content="79ECD879C763DE461A2B99413EC476FD" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
 
 
   <head>
@@ -531,56 +533,101 @@
         max-width: 320px;
     }
 }
+    .benefits-slider{
+  position:relative;
+  padding:40px 5%;
+}
+
+.benefits-slider::before,
+.benefits-slider::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:120px;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.benefits-slider::before{
+  left:0;
+  background:linear-gradient(to right, #0b0e12, transparent);
+}
+
+.benefits-slider::after{
+  right:0;
+  background:linear-gradient(to left, #0b0e12, transparent);
+}
+.swiper-slide{
+  opacity:0.5;
+  transform:scale(0.9);
+  transition:0.4s ease;
+}
+
+.swiper-slide-active{
+  opacity:1;
+  transform:scale(1);
+}
+.swiper-button-next,
+.swiper-button-prev{
+  color:#2d5bff;
+}
+
 
     </style>
 
-    
-<section class="benefits-wrapper-section">
+    <section>
+<div class="benefits-slider swiper">
   <div class="section-heading">
   <h2>Benefits</h2>
   <p>Premium UPVC windows & doors engineered for durability and elegance</p>
 </div>
 
-    <div class="benefits-grid">
-        <div class="benefit-card">
-            <div class="icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-            <h3>Complete Design Freedom</h3>
-        </div>
+  <div class="swiper-wrapper">
 
-        <div class="benefit-card">
-            <div class="icon-box"><i class="fa-solid fa-volume-xmark"></i></div>
-            <h3>Noise Insulation</h3>
-        </div>
-
-        <div class="benefit-card">
-            <div class="icon-box"><i class="fa-solid fa-cloud-showers-water"></i></div>
-            <h3>Rainwater Insulation</h3>
-        </div>
-
-        <div class="benefit-card">
-            <div class="icon-box"><i class="fa-solid fa-cloud-bolt"></i></div>
-            <h3>Storm Resistant</h3>
-        </div>
-
-        <div class="benefit-card">
-            <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-            <h3>Low Maintenance</h3>
-        </div>
-
-        <div class="benefit-card">
-            <div class="icon-box"><i class="fa-solid fa-faucet-drip"></i></div>
-            <h3>NO RUSTING</h3>
-        </div>
-
-        <div class="benefit-card">
-            <div class="icon-box"><i class="fa-solid fa-wind"></i></div>
-            <h3>DUST RESISTANT</h3>
-        </div>
+    <div class="benefit-card swiper-slide">
+      <div class="icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+      <h3>Complete Design Freedom</h3>
     </div>
-</section>
 
+    <div class="benefit-card swiper-slide">
+      <div class="icon-box"><i class="fa-solid fa-volume-xmark"></i></div>
+      <h3>Noise Insulation</h3>
+    </div>
+
+    <div class="benefit-card swiper-slide">
+      <div class="icon-box"><i class="fa-solid fa-cloud-showers-water"></i></div>
+      <h3>Rainwater Insulation</h3>
+    </div>
+
+    <div class="benefit-card swiper-slide">
+      <div class="icon-box"><i class="fa-solid fa-cloud-bolt"></i></div>
+      <h3>Storm Resistant</h3>
+    </div>
+
+    <div class="benefit-card swiper-slide">
+      <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+      <h3>Low Maintenance</h3>
+    </div>
+
+    <div class="benefit-card swiper-slide">
+      <div class="icon-box"><i class="fa-solid fa-faucet-drip"></i></div>
+      <h3>No Rusting</h3>
+    </div>
+
+    <div class="benefit-card swiper-slide">
+      <div class="icon-box"><i class="fa-solid fa-wind"></i></div>
+      <h3>Dust Resistant</h3>
+    </div>
+
+  </div>
+
+  <!-- arrows -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
     
-
+</section>
 
 
 
@@ -980,6 +1027,33 @@ function slide(dir) {
 });
   </script>
   <meta name="robots" content="index, follow">
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+new Swiper(".benefits-slider", {
+  loop: true,
+  centeredSlides: true,
+  grabCursor: true,
+  spaceBetween: 25,
+
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    0: { slidesPerView: 1.2 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }
+});
+</script>
+
 </body>
 </html>
 </body>

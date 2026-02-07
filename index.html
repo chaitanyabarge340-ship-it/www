@@ -606,6 +606,28 @@
 .swiper-button-prev{ left: 0; }
 .swiper-button-next{ right: 0; }
 
+    /* make swiper reference */
+.benefits-slider{
+  position: relative;
+}
+
+/* arrows vertically center to slides */
+.benefits-slider .swiper-button-prev,
+.benefits-slider .swiper-button-next{
+  top: 60%;                 /* push below heading */
+  transform: translateY(-50%);
+}
+
+/* horizontal spacing */
+.benefits-slider .swiper-button-prev{
+  left: -5px;
+}
+
+.benefits-slider .swiper-button-next{
+  right: -5px;
+}
+
+
 
     </style>
 

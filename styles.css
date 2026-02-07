@@ -1572,4 +1572,37 @@ font-display: swap;
   }
 }
 
+/* ==============================
+   Mobile navbar proper alignment
+   ============================== */
+@media (max-width: 768px) {
+
+  .container.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* 🔥 THIS IS THE MAIN FIX */
+  .brand{
+    flex: 0 0 auto;   /* do not take full width */
+  }
+
+  /* logo size */
+  .site-logo{
+    height: 34px;
+    width: auto;
+    display: block;
+  }
+
+  /* hide extra right buttons */
+  .nav-actions{
+    display: none;
+  }
+
+  /* hamburger right */
+  .hamburger{
+    margin-left: auto;
+  }
+}
 

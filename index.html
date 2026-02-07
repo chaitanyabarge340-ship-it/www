@@ -460,7 +460,7 @@
   <style>
 .benefits-wrapper-section {
     background: #f1f5f9; /* Same tone as work process */
-    padding: 100px 20px;
+    padding: 10px 5px;
     width: 100%;
     font-family: 'Inter', system-ui, sans-serif;
 }
@@ -496,7 +496,7 @@
 /* Stagger bottom row exactly like work-process */
 @media (min-width: 900px) {
     .benefit-card:nth-child(n+4) {
-        margin-top: 40px;
+        margin-top: 30px;
     }
 }
 
@@ -538,7 +538,7 @@
 /* keep relative */
 .benefits-slider{
   position: relative;
-  padding: 30px 40px;
+  padding: 10px 10px;
 }
 
 /* arrows aligned to card center */
@@ -570,7 +570,7 @@
   position:absolute;
   top:50% !important;
   transform:translateY(-50%) !important;
-  margin-top:40px;          /* fine tune */
+  margin-top:30px;          /* fine tune */
   width:40px;
   height:40px;
   color:#2d5bff;
@@ -595,7 +595,7 @@
 /* perfect vertical center */
 .swiper-button-next,
 .swiper-button-prev{
-  top: 50%;
+  top: 70%;
   transform: translateY(-50%);
   width:40px;
   height:40px;
@@ -614,7 +614,7 @@
 /* arrows vertically center to slides */
 .benefits-slider .swiper-button-prev,
 .benefits-slider .swiper-button-next{
-  top: 60%;                 /* push below heading */
+  top: 90%;                 /* push below heading */
   transform: translateY(-50%);
 }
 
@@ -627,6 +627,22 @@
   right: -5px;
 }
 
+/* ===== FORCE ARROW POSITION ===== */
+.benefits-slider .swiper-button-prev,
+.benefits-slider .swiper-button-next{
+  position: absolute !important;
+  top: 75% !important;
+  transform: translateY(-50%) !important;
+  z-index: 10 !important;
+}
+
+.benefits-slider .swiper-button-prev{
+  left: 10px !important;
+}
+
+.benefits-slider .swiper-button-next{
+  right: 10px !important;
+}
 
 
     </style>
@@ -1110,6 +1126,34 @@ new Swiper(".benefits-slider", {
   }
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".testimonials-slider");
+
+  if (!slider) return;
+
+  const scrollAmount = 1;   // movement per step (px)
+  const speed = 3;         // lower = faster
+
+  function autoSlide() {
+    slider.scrollLeft += scrollAmount;
+
+    // infinite loop
+    if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+      slider.scrollLeft = 0;
+    }
+  }
+
+  let slide = setInterval(autoSlide, speed);
+
+  // pause on hover (premium feature)
+  slider.addEventListener("mouseenter", () => clearInterval(slide));
+  slider.addEventListener("mouseleave", () => {
+    slide = setInterval(autoSlide, speed);
+  });
+});
+</script>
+
 
 </body>
 </html>

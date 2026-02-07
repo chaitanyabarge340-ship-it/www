@@ -1710,3 +1710,36 @@ font-display: swap;
   }
 
 }
+@media (max-width: 768px){
+
+  /* navbar height */
+  header{
+    height: 58px !important;
+    padding: 0 !important;
+  }
+
+  /* row layout */
+  header .container.nav{
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* BRAND WRAPPER RESET */
+  header .brand,
+  header .logo-header{
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* IMAGE RESET */
+  header .site-logo{
+    max-height: 36px !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+}

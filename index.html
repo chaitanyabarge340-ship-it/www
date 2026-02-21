@@ -968,6 +968,152 @@ new Swiper(".benefits-slider", {
 });
 </script>
 
+  <!---Ai Chat Button --->
+  <!-- ================= Ratan Plasfab AI Chat ================= -->
+
+<div id="rp-ai-btn">💬</div>
+
+<div id="rp-ai-box">
+  <div id="rp-ai-header">
+    Ratan Plasfab AI
+    <span onclick="rpToggleChat()">✖</span>
+  </div>
+
+  <div id="rp-ai-messages"></div>
+
+  <div id="rp-ai-input">
+    <input type="text" id="rp-ai-text" placeholder="Ask about uPVC windows & doors..." />
+    <button onclick="rpSend()">Send</button>
+  </div>
+</div>
+
+<style>
+#rp-ai-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:56px;
+  height:56px;
+  background:#0f4c81;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+  z-index:9999;
+}
+
+#rp-ai-box{
+  position:fixed;
+  bottom:85px;
+  right:20px;
+  width:320px;
+  height:420px;
+  background:#ffffff;
+  border-radius:14px;
+  box-shadow:0 15px 40px rgba(0,0,0,.35);
+  display:none;
+  flex-direction:column;
+  overflow:hidden;
+  z-index:9999;
+}
+
+#rp-ai-header{
+  background:#0f4c81;
+  color:#fff;
+  padding:12px 14px;
+  font-weight:600;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+#rp-ai-header span{
+  cursor:pointer;
+}
+
+#rp-ai-messages{
+  flex:1;
+  padding:10px;
+  font-size:14px;
+  overflow-y:auto;
+}
+
+.rp-user{
+  text-align:right;
+  margin:6px 0;
+  color:#0f4c81;
+}
+
+.rp-bot{
+  text-align:left;
+  margin:6px 0;
+  color:#333;
+}
+
+#rp-ai-input{
+  display:flex;
+  border-top:1px solid #ddd;
+}
+
+#rp-ai-input input{
+  flex:1;
+  padding:10px;
+  border:none;
+  outline:none;
+  font-size:14px;
+}
+
+#rp-ai-input button{
+  background:#0f4c81;
+  color:#fff;
+  border:none;
+  padding:0 16px;
+  cursor:pointer;
+}
+</style>
+
+<script>
+const rpBox = document.getElementById("rp-ai-box");
+const rpMessages = document.getElementById("rp-ai-messages");
+
+document.getElementById("rp-ai-btn").onclick = rpToggleChat;
+
+function rpGreeting(){
+  const lang = navigator.language.toLowerCase();
+  if(lang.includes("mr")){
+    return "नमस्कार 👋 मी Ratan Plasfab AI आहे. uPVC खिडक्या व दरवाजांबद्दल विचारू शकता.";
+  }
+  if(lang.includes("hi")){
+    return "नमस्ते 👋 मैं Ratan Plasfab AI हूँ। uPVC खिड़की और दरवाज़ों के बारे में पूछ सकते हैं।";
+  }
+  return "Hello 👋 I’m Ratan Plasfab AI. Ask me anything about uPVC windows and doors.";
+}
+
+function rpToggleChat(){
+  if(rpBox.style.display !== "flex"){
+    rpMessages.innerHTML = `<div class="rp-bot">${rpGreeting()}</div>`;
+    rpBox.style.display = "flex";
+  } else {
+    rpBox.style.display = "none";
+  }
+}
+
+function rpSend(){
+  const input = document.getElementById("rp-ai-text");
+  if(!input.value) return;
+
+  rpMessages.innerHTML += `<div class="rp-user">${input.value}</div>`;
+  rpMessages.innerHTML += `<div class="rp-bot">Thank you. Our AI assistant will reply here.</div>`;
+  input.value = "";
+  rpMessages.scrollTop = rpMessages.scrollHeight;
+}
+</script>
+
+<!-- =============== End Ratan Plasfab AI Chat =============== -->
 
 </body>
 </html>

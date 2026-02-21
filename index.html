@@ -975,7 +975,7 @@ new Swiper(".benefits-slider", {
 
 <div id="rp-ai-box">
   <div id="rp-ai-header">
-    Ratan Plasfab AI
+    RP Smart Assist
     <span onclick="rpToggleChat()">✖</span>
   </div>
 
@@ -1160,20 +1160,22 @@ document.getElementById("rp-ai-btn").onclick = rpToggleChat;
 function rpGreeting(){
   const lang = navigator.language.toLowerCase();
   if(lang.includes("mr")){
-    return "नमस्कार 👋 मी Ratan Plasfab AI आहे. uPVC खिडक्या व दरवाजांबद्दल विचारू शकता.";
+    return "नमस्कार 👋 मी RP Smart Assist आहे. uPVC खिडक्या व दरवाजांबद्दल विचारू शकता.";
   }
   if(lang.includes("hi")){
-    return "नमस्ते 👋 मैं Ratan Plasfab AI हूँ। uPVC खिड़की और दरवाज़ों के बारे में पूछ सकते हैं।";
+    return "नमस्ते 👋 मैं RP Smart Assist हूँ। uPVC खिड़की और दरवाज़ों के बारे में पूछ सकते हैं।";
   }
-  return "Hello 👋 I’m Ratan Plasfab AI. Ask me anything about uPVC windows and doors.";
+  return "Hello 👋 I’m RP Smart Assist. Ask me anything about uPVC windows and doors.";
 }
 
 function rpToggleChat(){
-  if(rpBox.style.display !== "flex"){
+  if(!rpBox.classList.contains("show")){
     rpMessages.innerHTML = `<div class="rp-bot">${rpGreeting()}</div>`;
     rpBox.style.display = "flex";
+    setTimeout(()=>rpBox.classList.add("show"),10);
   } else {
-    rpBox.style.display = "none";
+    rpBox.classList.remove("show");
+    setTimeout(()=>rpBox.style.display="none",300);
   }
 }
 

@@ -988,13 +988,14 @@ new Swiper(".benefits-slider", {
 </div>
 
 <style>
+/* ---------- Floating AI Button ---------- */
 #rp-ai-btn{
   position:fixed;
   bottom:20px;
   right:20px;
-  width:56px;
-  height:56px;
-  background:#0f4c81;
+  width:58px;
+  height:58px;
+  background:linear-gradient(135deg,#0f4c81,#1b6fb8);
   color:#fff;
   border-radius:50%;
   display:flex;
@@ -1002,80 +1003,154 @@ new Swiper(".benefits-slider", {
   justify-content:center;
   font-size:24px;
   cursor:pointer;
-  box-shadow:0 10px 25px rgba(0,0,0,.3);
+  box-shadow:0 12px 30px rgba(15,76,129,.5);
   z-index:9999;
+  animation:pulse 2.5s infinite;
+  transition:transform .25s ease, box-shadow .25s ease;
 }
 
+#rp-ai-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 18px 40px rgba(15,76,129,.65);
+}
+
+@keyframes pulse{
+  0%{ box-shadow:0 0 0 0 rgba(15,76,129,.5); }
+  70%{ box-shadow:0 0 0 14px rgba(15,76,129,0); }
+  100%{ box-shadow:0 0 0 0 rgba(15,76,129,0); }
+}
+
+/* ---------- Chat Box ---------- */
 #rp-ai-box{
   position:fixed;
-  bottom:85px;
+  bottom:90px;
   right:20px;
-  width:320px;
-  height:420px;
-  background:#ffffff;
-  border-radius:14px;
-  box-shadow:0 15px 40px rgba(0,0,0,.35);
+  width:330px;
+  height:440px;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
   display:none;
   flex-direction:column;
   overflow:hidden;
   z-index:9999;
+  transform:translateY(40px) scale(.96);
+  opacity:0;
+  transition:all .35s cubic-bezier(.4,0,.2,1);
 }
 
+#rp-ai-box.show{
+  display:flex;
+  transform:translateY(0) scale(1);
+  opacity:1;
+}
+
+/* ---------- Header ---------- */
 #rp-ai-header{
-  background:#0f4c81;
+  background:linear-gradient(135deg,#0f4c81,#1b6fb8);
   color:#fff;
-  padding:12px 14px;
+  padding:14px 16px;
   font-weight:600;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  letter-spacing:.3px;
 }
 
 #rp-ai-header span{
   cursor:pointer;
+  font-size:18px;
+  opacity:.85;
 }
 
+#rp-ai-header span:hover{
+  opacity:1;
+}
+
+/* ---------- Messages ---------- */
 #rp-ai-messages{
   flex:1;
-  padding:10px;
+  padding:14px;
   font-size:14px;
   overflow-y:auto;
+  background:#f6f9fc;
+}
+
+.rp-user,
+.rp-bot{
+  max-width:85%;
+  padding:10px 12px;
+  margin:6px 0;
+  border-radius:14px;
+  animation:fadeUp .25s ease;
 }
 
 .rp-user{
-  text-align:right;
-  margin:6px 0;
-  color:#0f4c81;
+  background:#0f4c81;
+  color:#fff;
+  margin-left:auto;
+  border-bottom-right-radius:4px;
 }
 
 .rp-bot{
-  text-align:left;
-  margin:6px 0;
+  background:#ffffff;
   color:#333;
+  border:1px solid #e5eaf0;
+  border-bottom-left-radius:4px;
 }
 
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(6px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+/* ---------- Input Area ---------- */
 #rp-ai-input{
   display:flex;
-  border-top:1px solid #ddd;
+  padding:10px;
+  background:#fff;
+  border-top:1px solid #e5eaf0;
 }
 
 #rp-ai-input input{
   flex:1;
-  padding:10px;
-  border:none;
+  padding:10px 12px;
+  border-radius:20px;
+  border:1px solid #d0d7de;
   outline:none;
   font-size:14px;
 }
 
+#rp-ai-input input:focus{
+  border-color:#0f4c81;
+}
+
 #rp-ai-input button{
-  background:#0f4c81;
+  background:linear-gradient(135deg,#0f4c81,#1b6fb8);
   color:#fff;
   border:none;
-  padding:0 16px;
+  padding:0 18px;
+  margin-left:8px;
+  border-radius:20px;
   cursor:pointer;
+  transition:opacity .2s ease;
+}
+
+#rp-ai-input button:hover{
+  opacity:.9;
+}
+
+/* ---------- Mobile ---------- */
+@media(max-width:480px){
+  #rp-ai-box{
+    width:94%;
+    right:3%;
+    bottom:85px;
+    height:85vh;
+  }
 }
 </style>
-
+  
 <script>
 const rpBox = document.getElementById("rp-ai-box");
 const rpMessages = document.getElementById("rp-ai-messages");

@@ -1193,6 +1193,7 @@ function rpSend(){
 <!-- =============== End Ratan Plasfab AI Chat =============== -->
 
   <!---Temp--->
+  <script>
 (function() {
   const RENDER_API_URL = "https://ratanplasfab-ai-backend.onrender.com"; // <-- replace with your Render endpoint
 
@@ -1203,25 +1204,40 @@ function rpSend(){
   const chatWindow = document.createElement('div');
   chatWindow.id = 'chat-window';
   chatWindow.style.cssText = `
-    position: fixed; bottom: 80px; right: 20px; width: 300px; max-height: 400px;
-    border: 1px solid #ccc; background: #fff; border-radius: 10px;
-    display: none; flex-direction: column; z-index: 1000; overflow: hidden;
+    position: fixed; 
+    bottom: 80px; 
+    right: 20px; 
+    width: 300px; 
+    max-height: 400px;
+    border: 1px solid #ccc; 
+    background: #fff; 
+    border-radius: 10px;
+    display: none; 
+    flex-direction: column; 
+    z-index: 1000; 
+    overflow: hidden;
   `;
   
   // Messages container
   const chatMessages = document.createElement('div');
   chatMessages.id = 'chat-messages';
   chatMessages.style.cssText = `
-    flex: 1; padding: 10px; overflow-y: auto; font-family: Arial, sans-serif; font-size: 14px;
+    flex: 1; 
+    padding: 10px; 
+    overflow-y: auto; 
+    font-family: Arial, sans-serif; 
+    font-size: 14px;
   `;
 
   // Input container
   const inputWrapper = document.createElement('div');
   inputWrapper.style.cssText = 'display:flex; border-top:1px solid #ccc;';
+  
   const chatInput = document.createElement('input');
   chatInput.id = 'chat-input';
   chatInput.placeholder = 'Type a message...';
   chatInput.style.cssText = 'flex:1; padding:10px; border:none; outline:none;';
+  
   const sendBtn = document.createElement('button');
   sendBtn.id = 'send-btn';
   sendBtn.innerText = 'Send';
@@ -1283,6 +1299,7 @@ function rpSend(){
   });
 
 })();
+    </script>
  
 
 </body>

@@ -1191,6 +1191,22 @@ function rpSend(){
 </script>
 
 <!-- =============== End Ratan Plasfab AI Chat =============== -->
+  <script>
+async function askPlasfabAI(userMessage) {
+  const response = await fetch("https://ratanplasfab-ai-backend.onrender.com", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      message: userMessage
+    })
+  });
+
+  const data = await response.json();
+  return data.reply;
+}
+</script>
 
 </body>
 </html>

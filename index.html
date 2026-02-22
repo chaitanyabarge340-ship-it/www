@@ -1154,23 +1154,29 @@ new Swiper(".benefits-slider", {
 <script>
 const rpBox = document.getElementById("rp-ai-box");
 const rpMessages = document.getElementById("rp-ai-messages");
+const rpInput = document.getElementById("rp-ai-text");
 
 document.getElementById("rp-ai-btn").onclick = rpToggleChat;
 
+// This makes the "Enter" key work for sending messages
+rpInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    rpSend();
+  }
+});
+
 function rpGreeting(){
   const lang = navigator.language.toLowerCase();
-  if(lang.includes("mr")){
-    return "नमस्कार 👋 मी RP Smart Assist आहे. uPVC खिडक्या व दरवाजांबद्दल विचारू शकता.";
-  }
-  if(lang.includes("hi")){
-    return "नमस्ते 👋 मैं RP Smart Assist हूँ। uPVC खिड़की और दरवाज़ों के बारे में पूछ सकते हैं।";
-  }
+  if(lang.includes("mr")) return "नमस्कार 👋 मी RP Smart Assist आहे. uPVC खिडक्या व दरवाजांबद्दल विचारू शकता.";
+  if(lang.includes("hi")) return "नमस्ते 👋 मैं RP Smart Assist हूँ। uPVC खिड़की और दरवाज़ों के बारे में पूछ सकते हैं।";
   return "Hello 👋 I’m RP Smart Assist. Ask me anything about uPVC windows and doors.";
 }
 
 function rpToggleChat(){
   if(!rpBox.classList.contains("show")){
-    rpMessages.innerHTML = `<div class="rp-bot">${rpGreeting()}</div>`;
+    if(rpMessages.innerHTML === "") {
+        rpMessages.innerHTML = `<div class="rp-bot">${rpGreeting()}</div>`;
+    }
     rpBox.style.display = "flex";
     setTimeout(()=>rpBox.classList.add("show"),10);
   } else {
@@ -1179,13 +1185,36 @@ function rpToggleChat(){
   }
 }
 
-function rpSend(){
-  const input = document.getElementById("rp-ai-text");
-  if(!input.value) return;
+async function rpSend(){
+  const message = rpInput.value.trim();
+  if(!message) return;
 
-  rpMessages.innerHTML += `<div class="rp-user">${input.value}</div>`;
-  rpMessages.innerHTML += `<div class="rp-bot">Thank you. Our AI assistant will reply here.</div>`;
-  input.value = "";
+  // 1. Show your message
+  rpMessages.innerHTML += `<div class="rp-user">${message}</div>`;
+  rpInput.value = "";
+  
+  // 2. Show a "Thinking..." bubble
+  const loadingId = "loading-" + Date.now();
+  rpMessages.innerHTML += `<div class="rp-bot" id="${loadingId}">...</div>`;
+  rpMessages.scrollTop = rpMessages.scrollHeight;
+
+  try {
+    // 3. Talk to your Node.js Server
+    // Note: Change 'localhost:3000' to your Render URL after you deploy!
+    const response = await fetch('http://localhost:3000/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: message })
+    });
+
+    const data = await response.json();
+    
+    // 4. Replace "..." with the real AI answer
+    document.getElementById(loadingId).innerText = data.reply;
+  } catch (error) {
+    document.getElementById(loadingId).innerText = "Sorry, I am having trouble connecting. Please try again.";
+  }
+  
   rpMessages.scrollTop = rpMessages.scrollHeight;
 }
 </script>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why Us | Ratan Plasfab</title>
+  <link rel="canonical" href="https://www.ratanplasfab.in/why-us/" />
+  <meta name="description" content="Discover why Ratan Plasfab is the trusted choice for premium UPVC windows and doors. Learn the advantages of UPVC and our commitment to quality, service, and local expertise." />
+  <style>
+    :root {
+      --bg: #0c1222;
+      --surface: #121a2f;
+      --primary: #1c3b8c; /* deep premium blue */
+      --primary-600: #15306f;
+      --primary-300: #4a6ac0;
+      --accent: #14b8a6;
+      --text: #e6ebf5;
+      --muted: #97a2ba;
+      --border: #223156;
+      --shadow: 0 10px 30px rgba(12, 18, 34, 0.35);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --radius-lg: 24px;
+      --container: 1200px;
+    }
+
+    [data-theme="light"] {
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --primary: #143a88;
+      --primary-600: #0f2e6b;
+      --primary-300: #4767bc;
+      --accent: #0aa193;
+      --text: #0f172a;
+      --muted: #51607f;
+      --border: #e5eaf5;
+      --shadow: 0 12px 28px rgba(20, 58, 136, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 500px at 70% -20%, rgba(28, 59, 140, 0.15), transparent 60%), var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(1.2) blur(8px);
+      background: linear-gradient(0deg, rgba(255,255,255,0.0), rgba(255,255,255,0.06)) var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: flex; align-items: center; gap: 12px; text-decoration: none;
+    }
+
+    .brand-logo {
+  width: 100px;   /* adjust to match your square */
+  height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effect: subtle zoom + brightness */
+.brand-logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* Dark mode adaptation */
+body.dark-mode .brand-logo {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+    .brand-logo {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary-300), var(--primary-600));
+      box-shadow: var(--shadow);
+    }
+
+    .brand-name {
+      font-weight: 700; letter-spacing: 0.4px; color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex; align-items: center; gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 10px 16px; border-radius: 999px; border: 1px solid var(--border);
+      color: var(--text); text-decoration: none; transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-300), var(--primary-600));
+      border: none;
+      color: #fff;
+    }
+
+    .toggle {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+    }
+
+   .image-overlay {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(20,58,136,0.16), rgba(20,161,147,0.12));
+  min-height: 220px;   /* 🔥 CHANGE */
+  height: auto;        /* 🔥 CHANGE */
+  padding: 20px;       /* 🔥 ADD */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .image-overlay {
+    min-height: 180px;
+  }
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3; /* adjust for visibility behind text */
+  z-index: 1;
+}
+
+.stamp {
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
+  color: #003366; /* adjust for contrast */
+  background-color: rgba(255, 255, 255, 0.6); /* optional for readability */
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+}
+
+    /* Hero */
+    .hero {
+      padding: 72px 0 40px;
+      background:
+        radial-gradient(600px 200px at 15% 0%, rgba(20, 58, 136, 0.22), transparent 55%),
+        radial-gradient(800px 220px at 85% 20%, rgba(20, 161, 147, 0.12), transparent 60%);
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; color: var(--muted);
+      border: 1px solid var(--border); border-radius: 999px;
+      padding: 6px 12px; background: var(--surface);
+    }
+    h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      margin: 16px 0 12px; line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: clamp(14px, 2.5vw, 18px);
+      margin-bottom: 28px;
+    }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* Section */
+    section { padding: 40px 0; }
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(22px, 4vw, 34px);
+    }
+
+    /* Grids */
+    .grid {
+      display: grid; gap: clamp(16px, 3vw, 24px);
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    @media (max-width: 900px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    /* Cards */
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(28, 59, 140, 0.06), transparent 40%) var(--surface);
+    }
+    .card h3 { margin: 6px 0 8px; font-size: 18px; }
+    .card p { color: var(--muted); margin: 0; }
+
+    /* Icon */
+    .icon {
+      width: 22px; height: 22px; flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    /* CTA block */
+    .cta {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      padding: clamp(20px, 4vw, 28px);
+      background: linear-gradient(135deg, rgba(20, 58, 136, 0.08), rgba(20, 161, 147, 0.05));
+    }
+    .cta h3 { margin: 0; }
+    .cta p { margin: 6px 0 0; color: var(--muted); }
+
+    /* Footer */
+    footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid var(--border);
+      margin-top: 30px;
+    }
+    .footer-grid { display: grid; gap: 18px; grid-template-columns: 1.4fr 1fr 1fr; }
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr; } }
+    .foot-note { color: var(--muted); font-size: 13px; }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0; transform: translateY(12px);
+      animation: fadeUp 600ms ease forwards;
+    }
+    .fade-up.delay-1 { animation-delay: 120ms; }
+    .fade-up.delay-2 { animation-delay: 240ms; }
+    .fade-up.delay-3 { animation-delay: 360ms; }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Utility */
+    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; background: rgba(20,58,136,0.12); color: var(--primary); font-size: 13px; border: 1px solid var(--border); }
+    .lead { color: var(--muted); font-size: 16px; }
+    .stamp {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 10px;
+      background: linear-gradient(135deg, rgba(20, 161, 147, 0.12), rgba(20,58,136,0.10));
+      border: 1px solid var(--border);
+      color: var(--primary-600); font-weight: 600; font-size: 13px;
+    }
+
+    /* Links */
+    a.link {
+      color: var(--primary-300); text-decoration: none; border-bottom: 1px dashed var(--border);
+    }
+    a.link:hover { color: var(--primary); }
+
+    @media (max-width: 768px) {
+  section {
+    padding: 32px 0;
+  }
+
+  .grid,
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+}
+.card {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 16px;
+  }
+}
+h1, h2, h3, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+       <img src="images/logo.png" alt="Ratan Plasfab Logo" class="brand-logo" />  
+        <span class="brand-name">Ratan Plasfab</span>
+      </a>
+      <div class="nav-actions">
+        <button class="btn toggle" id="themeToggle" aria-label="Toggle dark mode">Toggle theme</button>
+        <a class="btn" href="#pros">UPVC advantages</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container section-card fade-up">
+        <span class="eyebrow">Premium UPVC windows & doors • Since 1998</span>
+        <h1>Why Ratan Plasfab</h1>
+        <p class="subtitle">विश्वास, गुणवत्ता आणि आधुनिकता — trusted local craftsmanship with global-grade UPVC performance.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Get a quick estimate</a>
+          <a class="btn" href="https://wa.me/9822677223" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company overview -->
+    <section>
+      <div class="container grid grid-2">
+        <div class="section-card fade-up">
+          <span class="tag">Local expertise • Pune & Satara</span>
+          <h2 style="margin: 12px 0 8px;">Premium craftsmanship, engineered for Maharashtra’s climate</h2>
+          <p class="lead">
+            Ratan Plasfab is a leading manufacturer and supplier of high-quality UPVC windows and doors, known for durability,
+            energy efficiency, and low maintenance. Rooted in Pune and Satara, we combine regional insight with international
+            standards—ensuring every frame, seal, and hardware choice performs flawlessly in heat, humidity, dust, and monsoon.
+          </p>
+          <p>
+            From boutique residences to commercial spaces, our team delivers end-to-end service: precise site measurements,
+            custom fabrication, expert installation, and dependable after-sales support. We use premium profiles and multi-chamber
+            designs for thermal performance, reinforced with robust hardware that stands up to daily use. The result is a calm,
+            comfortable interior, lower energy bills, and timeless aesthetics that uplift your space.
+          </p>
+          <p>
+            Our promise is simple: transparent communication, exacting quality checks, and clean, professional installs. When you choose
+            Ratan Plasfab, you get more than a product—you get a partner invested in your project’s success, backed by local accountability
+            and craftsmanship you can feel in every touchpoint.
+          </p>
+        </div>
+       <div class="section-card fade-up delay-1">
+  <div class="image-overlay">
+    <img src="images/profile.jpg" alt="UPVC window detail" class="background-image" />
+    <span class="stamp">Placeholder image • UPVC window detail</span>
+  </div>
+</div>
+          <div style="display:flex; gap:12px; margin-top: 14px;">
+            <span class="stamp">ISO-grade materials</span>
+            <span class="stamp">Clean installation</span>
+            <span class="stamp">After-sales support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose Ratan Plasfab -->
+    <section>
+      <div class="container section-card fade-up">
+        <h2 style="margin: 0 0 16px;">Why choose Ratan Plasfab</h2>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>Innovation in every profile</h3>
+            <p>Multi-chamber designs, precision sealing, and reinforced hardware deliver class-leading performance without compromising design.</p>
+          </div>
+          <div class="card">
+            <h3>Customer-first service</h3>
+            <p>Clear timelines, neat installs, and proactive communication—from quotation to handover—keep your project stress-free.</p>
+          </div>
+          <div class="card">
+            <h3>Premium materials</h3>
+            <p>Top-grade UPVC, high-quality gaskets, and corrosion-resistant hardware ensure reliability across seasons.</p>
+          </div>
+          <div class="card">
+            <h3>Regional expertise</h3>
+            <p>Designed for Maharashtra’s climate: better thermal comfort, strong weather sealing, and long-term stability.</p>
+          </div>
+          <div class="card">
+            <h3>Clean, professional installation</h3>
+            <p>Skilled teams, tidy work sites, and careful finishing preserve your interiors and deliver a polished result.</p>
+          </div>
+          <div class="card">
+            <h3>Transparent warranties</h3>
+            <p>Documentation and support that make maintenance simple and ownership worry-free.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pros of UPVC by Ratan Plasfab -->
+    <section id="pros">
+      <div class="container section-card fade-up">
+        <h2 style="margin: 0 0 16px;">Pros of UPVC by Ratan Plasfab</h2>
+        <div class="grid grid-3">
+          <div class="card">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h3 style="margin:0;">Weather resistance</h3>
+            </div>
+            <p>Resists heat, rain, and UV exposure; won’t warp, corrode, or fade—ideal for monsoons and coastal humidity.</p>
+          </div>
+          <div class="card">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg>
+              <h3 style="margin:0;">Thermal insulation</h3>
+            </div>
+            <p>Multi-chamber profiles reduce heat transfer, improving indoor comfort and reducing cooling costs.</p>
+          </div>
+          <div class="card">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg>
+              <h3 style="margin:0;">Soundproofing</h3>
+            </div>
+            <p>Precise seals and compatible glazing options dampen street noise for quieter homes and offices.</p>
+          </div>
+          <div class="card">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg>
+              <h3 style="margin:0;">Low maintenance</h3>
+            </div>
+            <p>No painting or polishing needed—just simple cleaning. Profiles retain finish and function for years.</p>
+          </div>
+          <div class="card">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg>
+              <h3 style="margin:0;">Eco-friendly</h3>
+            </div>
+            <p>Long lifespan and energy savings reduce environmental impact; materials are recyclable at end-of-life.</p>
+          </div>
+          <div class="card">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg>
+              <h3 style="margin:0;">Long lifespan</h3>
+            </div>
+            <p>Engineered to perform for decades, maintaining structural integrity and aesthetics with consistent use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Differentiators -->
+    <section>
+      <div class="container grid grid-2">
+        <div class="section-card fade-up">
+          <h2 style="margin:0 0 12px;">Built for performance, styled for elegance</h2>
+          <p>
+            We treat each installation as a design decision. Slim, balanced sightlines and premium finishes complement modern
+            interiors, while robust gaskets and precision hardware guarantee long-term performance. You get beauty that works,
+            day after day.
+          </p>
+          <p>
+            Our process is clear and efficient—on-site assessment, design consultation, fabrication, and supervised install—so
+            your project stays on schedule and your space stays spotless.
+          </p>
+        </div>
+        <div class="section-card fade-up delay-1">
+          <h2 style="margin:0 0 12px;">Assurance you can measure</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>Exact fit</h3>
+              <p>Laser-accurate measurements and custom fabrication for seamless frames and smooth operation.</p>
+            </div>
+            <div class="card">
+              <h3>Clean handover</h3>
+              <p>Protected interiors, tidy finishing, and quick walkthroughs so you can start enjoying your space immediately.</p>
+            </div>
+            <div class="card">
+              <h3>Responsive support</h3>
+              <p>Warranty-backed components and prompt service keep ownership effortless.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact">
+      <div class="container cta fade-up">
+        <div>
+          <h3 style="margin:0;">Ready to upgrade to premium UPVC?</h3>
+          <p>Get a tailored quotation with material options, lead times, and a clean installation plan.</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="/#quote">Request a quote</a>
+          <a class="btn" href="https://wa.me/9822677223" target="_blank" rel="noopener">WhatsApp now</a>
+          <a class="btn" href="/contact/">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:10px;">
+           <img src="images/logo.png" alt="Ratan Plasfab Logo" class="brand-logo" />
+          <span class="brand-name">Ratan Plasfab</span>
+        </div>
+        <p class="foot-note">Premium UPVC solutions with local expertise across Pune & Satara.</p>
+        <p class="foot-note">© <span id="year"></span> Ratan Plasfab. All rights reserved.</p>
+      </div>
+      <div>
+        <h3 style="margin:0 0 8px; font-size:16px;">Quick links</h3>
+        <p class="foot-note"><a class="link" href="/#home">Home</a> · <a class="link" href="/products/">Products</a> · <a class="link" href="/gallery/">Gallery</a></p>
+        <p class="foot-note"><a class="link" href="/#why-us">Why us</a> · <a class="link" href="/contact/">Contact</a></p>
+      </div>
+      <div>
+        <h3 style="margin:0 0 8px; font-size:16px;">Contact</h3>
+        <p class="foot-note">Pune • Satara</p>
+        <p class="foot-note">Email: ratanplasfab@gmail.com</p>
+        <p class="foot-note">WhatsApp: +91-98226-77223</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+    toggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') || 'light';
+      const next = current === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

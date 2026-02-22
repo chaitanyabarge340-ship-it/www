@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You | Ratan Plasfab</title>
+  <meta name="description" content="Thank you for contacting Ratan Plasfab. We appreciate your interest in our UPVC windows and doors." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Poppins for English + Hind for Marathi readability -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Hind:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.16);
+      --text: #eaeef3;
+      --muted: #b9c2cc;
+      --accent: #2dd4bf; /* teal */
+      --accent-2: #60a5fa; /* blue */
+      --success: #22c55e;
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      --radius: 16px;
+      --maxw: 860px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 10% 10%, #0f172a, #0b0f14 50%) fixed;
+      color: var(--text);
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, "Hind", sans-serif;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--maxw);
+    }
+
+    /* Glassmorphism card */
+    .card {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      backdrop-filter: saturate(150%) blur(18px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    /* Decorative gradient edge */
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: calc(var(--radius) + 2px);
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(45, 212, 191, 0.45), rgba(96, 165, 250, 0.45));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+    }
+
+    .content {
+      position: relative;
+      padding: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .logo {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid; place-items: center;
+      color: #041b1a;
+      font-weight: 700;
+    }
+    .logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px; /* optional, if you want rounded corners */
+  object-fit: contain; /* keeps proportions */
+}
+
+    .brand h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    .headline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0 8px;
+    }
+
+    .check {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      color: var(--success);
+      display: grid; place-items: center;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .sub {
+      margin: 6px 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .local {
+      margin: 2px 0 22px;
+      color: #d6f1ed;
+      font-family: "Hind", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 18px 0 28px;
+    }
+
+    .info {
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px dashed rgba(255, 255, 255, 0.18);
+    }
+
+    .info b {
+      display: block;
+      margin-bottom: 6px;
+      color: #cbe7ff;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #041b1a;
+      box-shadow: 0 8px 20px rgba(45, 212, 191, 0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-ghost:hover { transform: translateY(-2px); }
+
+    .hint {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Subtle confetti */
+    .confetti {
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .confetti span {
+      position: absolute;
+      width: 8px; height: 14px;
+      background: linear-gradient(180deg, #2dd4bf, #60a5fa);
+      opacity: 0.85;
+      transform: translateY(-20px) rotate(12deg);
+      animation: drop 1.6s ease-in forwards;
+      border-radius: 2px;
+    }
+    @keyframes drop {
+      to { transform: translateY(120vh) rotate(220deg); opacity: 0; }
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .content { padding: 22px; }
+      .info-grid { grid-template-columns: 1fr; }
+      h2 { font-size: 22px; }
+    }
+
+    /* Optional auto-redirect hint style */
+    .redirect {
+      display: none;
+      margin-top: 10px;
+      color: #cce7e3;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="content">
+        <div class="brand">
+          <!-- Replace with your actual logo image if available -->
+          <img src="logo.png" alt="Ratan Plasfab Logo" class="logo-img" />
+          <h1>Ratan Plasfab</h1>
+        </div>
+
+        <div class="headline">
+          <div class="check" aria-hidden="true">✓</div>
+          <h2>Thank you. Your request has been received.</h2>
+        </div>
+
+        <p class="sub">
+          We appreciate your interest in our UPVC windows and doors. Our team will review your message and get back to you soon.
+          For urgent questions, WhatsApp is the fastest way to reach us.
+        </p>
+
+        <p class="local">विश्वासाने संपर्क करा — तुमच्या घरासाठी उत्तम UPVC सोल्यूशन्स.</p>
+
+        <div class="info-grid" role="list">
+          <div class="info" role="listitem">
+            <b>What happens next</b>
+            We’ll confirm details, share options, and provide a clear quotation. If needed, we’ll coordinate a site visit in Satara and nearby areas.
+          </div>
+          <div class="info" role="listitem">
+            <b>Tip for a faster quote</b>
+            Share approximate sizes, preferred colors, and any photos. This helps us suggest the best profile and glass combinations.
+          </div>
+        </div>
+
+        <div class="cta">
+          <!-- Update phone number and message as needed -->
+          <a class="btn btn-primary" href="https://wa.me/919822677223?text=Hello%20Ratan%20Plasfab%2C%20I%27d%20like%20a%20quotation%20for%20UPVC%20windows%20and%20doors." target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.1 2 11c0 1.76.53 3.41 1.44 4.82L2 22l6.36-1.67C9.69 20.84 10.82 21 12 21c5.52 0 10-4.1 10-9s-4.48-10-10-10Z" stroke="#041b1a" stroke-width="1.4"/>
+              <path d="M16.54 14.3c-.23.65-1.11 1.2-1.75 1.36-.47.11-1.09.2-3.18-.66-2.64-1.1-4.34-3.79-4.47-3.97-.13-.18-1.07-1.42-1.07-2.71 0-1.29.68-1.92.92-2.19.24-.27.53-.34.71-.34.18 0 .36.01.52.02.17.01.39-.06.61.47.23.55.78 1.9.85 2.03.07.13.11.28.02.46-.09.18-.14.29-.27.45-.13.16-.28.36-.4.48-.13.13-.27.27-.12.54.15.27.67 1.1 1.44 1.79 1 0.88 1.84 1.17 2.11 1.3.27.13.43.11.58-.06.15-.17.67-.78.84-1.05.18-.27.37-.23.61-.14.25.09 1.57.74 1.84.87.27.13.45.2.52.31.07.11.07.63-.15 1.28Z" fill="#041b1a"/>
+            </svg>
+            WhatsApp now
+          </a>
+
+          <a class="btn btn-ghost" href="/" aria-label="Return to the homepage">
+            ← Back to home
+          </a>
+        </div>
+
+        <p class="hint">
+          If you submitted a form, a confirmation email or call will follow. Feel free to keep browsing our product gallery.
+        </p>
+
+        <p id="redirect" class="redirect">Redirecting you back to the homepage in a moment...</p>
+
+        <div class="confetti" aria-hidden="true"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Generate subtle confetti pieces
+    (function makeConfetti() {
+      const host = document.querySelector(".confetti");
+      if (!host) return;
+      const count = Math.min(28, Math.max(16, Math.floor(window.innerWidth / 48)));
+      for (let i = 0; i < count; i++) {
+        const s = document.createElement("span");
+        s.style.left = Math.random() * 100 + "%";
+        s.style.animationDelay = (Math.random() * 0.8) + "s";
+        s.style.transform = `translateY(-20px) rotate(${Math.random() * 20 + 6}deg)`;
+        host.appendChild(s);
+      }
+      setTimeout(() => host.remove(), 2000);
+    })();
+
+    // Optional auto-redirect after 8 seconds (enable if desired)
+    const enableAutoRedirect = false; // set to true to activate
+    if (enableAutoRedirect) {
+      const note = document.getElementById("redirect");
+      if (note) note.style.display = "block";
+      setTimeout(() => { window.location.href = "/"; }, 8000);
+    }
+  </script>
+</body>
+
+</html>
+
+

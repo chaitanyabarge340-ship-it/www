@@ -1185,6 +1185,22 @@ function rpToggleChat(){
   }
 }
 
+function rpTypeText(element, text, speed = 22) {
+  element.innerHTML = "";
+  let i = 0;
+
+  function typing() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      rpMessages.scrollTop = rpMessages.scrollHeight;
+      setTimeout(typing, speed);
+    }
+  }
+
+  typing();
+}
+
 async function rpSend(){
   const message = rpInput.value.trim();
   if(!message) return;
@@ -1210,13 +1226,15 @@ async function rpSend(){
     const data = await response.json();
     
     // 4. Replace "..." with the real AI answer
-    document.getElementById(loadingId).innerText = data.reply;
+    const botDiv = document.getElementById(loadingId);
+   rpTypeText(botDiv, data.reply);
   } catch (error) {
     document.getElementById(loadingId).innerText = "Sorry, I am having trouble connecting. Please try again.";
   }
   
   rpMessages.scrollTop = rpMessages.scrollHeight;
 }
+
 </script>
 
 <!-- =============== End Ratan Plasfab AI Chat =============== -->

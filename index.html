@@ -1217,7 +1217,7 @@ async function rpSend(){
   try {
     // 3. Talk to your Node.js Server
     // Note: Change 'localhost:3000' to your Render URL after you deploy!
-    const response = await fetch('http://localhost:3000/chat', {
+    const response = await fetch('https://rp-smart-assist.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: message })

@@ -1,10 +1,27 @@
 {
+  "name": "rp-ai-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
     "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
-    "express": "^5.2.1",
-    "openai": "^6.22.0"
-  }
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "node-fetch": "^3.3.2"
+  },
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaitanyabarge340-ship-it/www.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaitanyabarge340-ship-it/www/issues"
+  },
+  "homepage": "https://github.com/chaitanyabarge340-ship-it/www#readme"
 }
-

@@ -1186,12 +1186,12 @@ function rpToggleChat(){
 }
 
 function rpTypeText(element, text, speed = 22) {
-  element.innerHTML = "";
+  element.textContent = "";   // IMPORTANT: use textContent
   let i = 0;
 
   function typing() {
     if (i < text.length) {
-      element.innerHTML += text.charAt(i);
+      element.textContent += text[i];
       i++;
       rpMessages.scrollTop = rpMessages.scrollHeight;
       setTimeout(typing, speed);

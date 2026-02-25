@@ -13,13 +13,68 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.ratanplasfab.in/contact.html</loc>
+  <loc>https://www.ratanplasfab.in/contact/</loc>
   <lastmod>2025-11-11T15:55:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
       <url>
-  <loc>https://www.ratanplasfab.in/about-us.html</loc>
+  <loc>https://www.ratanplasfab.in/about-us/</loc>
+  <lastmod>2025-11-11T15:55:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://www.ratanplasfab.in/products/</loc>
+  <lastmod>2025-11-11T15:55:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://www.ratanplasfab.in/upvc-windows-in-satara/</loc>
+  <lastmod>2025-11-11T15:55:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://www.ratanplasfab.in/why-us/</loc>
+  <lastmod>2025-11-11T15:55:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://www.ratanplasfab.in/brochure/</loc>
+  <lastmod>2025-11-11T15:55:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://www.ratanplasfab.in/gallery/</loc>
+  <lastmod>2025-11-11T15:55:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://www.ratanplasfab.in/karad-region/</loc>
+  <lastmod>2025-11-11T15:55:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://www.ratanplasfab.in/kolhapur-region/</loc>
+  <lastmod>2025-11-11T15:55:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://www.ratanplasfab.in/pune-region/</loc>
+  <lastmod>2025-11-11T15:55:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://info.ratanplasfab.in/</loc>
+  <lastmod>2025-11-11T15:55:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://satara.ratanplasfab.in/</loc>
+  <lastmod>2025-11-11T15:55:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+      <url>
+  <loc>https://products.ratanplasfab.in/</loc>
   <lastmod>2025-11-11T15:55:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -27,3 +82,4 @@
 
 
 </urlset>
+

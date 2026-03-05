@@ -842,14 +842,7 @@ function slide(dir) {
 
 
   <script>
-    // Dark / Light toggle
-    const toggle = document.getElementById('themeToggle');
-    const root = document.body;
-    toggle.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
-      root.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
-    });
-
+    
     // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {

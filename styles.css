@@ -1,15 +1,22 @@
 :root {
-	--bg: #f8fafc;
+	--bg: #f1f5f9;          /* page background */
 	--surface: #ffffff;
 	--card: #ffffff;
-	--border: #e5e7eb;
+
+	--section-alt: #f8fafc; /* alternate section color */
+
+	--border: #e2e8f0;
+
 	--text: #0f172a;
 	--muted: #475569;
-	--accent: #2563eb;
+
+	--accent: #2563eb;      /* primary brand blue */
 	--accent-2: #16a34a;
-	--danger: #dc2626;
-	--shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
-	--blur: saturate(120%) blur(6px);
+
+	--dark-section: #0f172a;
+	--dark-text: #ffffff;
+
+	--shadow: 0 12px 35px rgba(2, 6, 23, 0.10);
 }
 
 
@@ -282,6 +289,7 @@ header {
 .hero {
 	position: relative;
 	padding: 30px 0 25px;
+	background: linear-gradient(180deg,#ffffff,#f1f5f9);
 }
 
 .hero-wrap {
@@ -414,7 +422,13 @@ section {
 	border-radius: 14px;
 	background: var(--card);
 	border: 1px solid var(--border);
-	box-shadow: var(--shadow);
+	box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+	transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover{
+	transform: translateY(-6px);
+	box-shadow: 0 30px 70px rgba(0,0,0,0.12);
 }
 
 .card img {
@@ -1868,5 +1882,9 @@ font-display: swap;
 
 .swiper-slide-active .benefit-card{
   animation: floatCard 3s ease-in-out infinite;
+}
+
+section:nth-child(even){
+	background: var(--section-alt);
 }
 

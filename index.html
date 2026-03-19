@@ -792,126 +792,6 @@ function slide(dir) {
   </div>
 </footer>
 
-
-  <script>
-    
-    // Reveal on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('show');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Simple submit handler (redirect to thank-you page)
-    function handleSubmit(e) {
-      e.preventDefault();
-      // Collect form data if you want to send to backend
-      // const data = Object.fromEntries(new FormData(e.target));
-      // TODO: POST data to your endpoint
-
-      // Redirect to a thank-you page (create /thank-you.html)
-      window.location.href = '/thank-you.html';
-    }
-    
-    document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.getElementById('hamburger');
-  const navbar = document.getElementById('navbar');
-  const overlay = document.getElementById('overlay');
-
-  // Check if elements exist to avoid errors
-  if (hamburger && navbar && overlay) {
-    hamburger.addEventListener('click', () => {
-      // Toggle classes
-      const isOpen = navbar.classList.toggle('active');
-      hamburger.classList.toggle('open');
-      overlay.classList.toggle('active');
-      
-      // Stop the background from scrolling when menu is open
-      document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-    });
-
-    // Close menu when clicking the darkened overlay
-    overlay.addEventListener('click', () => {
-      navbar.classList.remove('active');
-      hamburger.classList.remove('open');
-      overlay.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    });
-
-    // Close menu when a link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navbar.classList.remove('active');
-        hamburger.classList.remove('open');
-        overlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      });
-    });
-  }
-});
-  </script>
-  
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector(".testimonials-slider");
-
-  if (!slider) return;
-
-  const scrollAmount = 1;   // movement per step (px)
-  const speed = 3;         // lower = faster
-
-  function autoSlide() {
-    slider.scrollLeft += scrollAmount;
-
-    // infinite loop
-    if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-      slider.scrollLeft = 0;
-    }
-  }
-
-  let slide = setInterval(autoSlide, speed);
-
-  // pause on hover (premium feature)
-  slider.addEventListener("mouseenter", () => clearInterval(slide));
-  slider.addEventListener("mouseleave", () => {
-    slide = setInterval(autoSlide, speed);
-  });
-});
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-<script>
-new Swiper(".benefits-slider", {
-  loop: true,
-  centeredSlides: true,
-  grabCursor: true,
-  spaceBetween: 20,
-
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  breakpoints: {
-    0: { slidesPerView: 1 },
-    600: { slidesPerView: 1.2 },
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 }
-  }
-});
-</script>
-
   <!---Ai Chat Button --->
   <!-- ================= Ratan Plasfab AI Chat ================= -->
 
@@ -1177,6 +1057,124 @@ async function rpSend(){
 }
 </script>
   <script src="script.js" defer></script>
+   <script>
+    
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Simple submit handler (redirect to thank-you page)
+    function handleSubmit(e) {
+      e.preventDefault();
+      // Collect form data if you want to send to backend
+      // const data = Object.fromEntries(new FormData(e.target));
+      // TODO: POST data to your endpoint
+
+      // Redirect to a thank-you page (create /thank-you.html)
+      window.location.href = '/thank-you.html';
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navbar = document.getElementById('navbar');
+  const overlay = document.getElementById('overlay');
+
+  // Check if elements exist to avoid errors
+  if (hamburger && navbar && overlay) {
+    hamburger.addEventListener('click', () => {
+      // Toggle classes
+      const isOpen = navbar.classList.toggle('active');
+      hamburger.classList.toggle('open');
+      overlay.classList.toggle('active');
+      
+      // Stop the background from scrolling when menu is open
+      document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    });
+
+    // Close menu when clicking the darkened overlay
+    overlay.addEventListener('click', () => {
+      navbar.classList.remove('active');
+      hamburger.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        hamburger.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+  }
+});
+  </script>
+  
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".testimonials-slider");
+
+  if (!slider) return;
+
+  const scrollAmount = 1;   // movement per step (px)
+  const speed = 3;         // lower = faster
+
+  function autoSlide() {
+    slider.scrollLeft += scrollAmount;
+
+    // infinite loop
+    if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+      slider.scrollLeft = 0;
+    }
+  }
+
+  let slide = setInterval(autoSlide, speed);
+
+  // pause on hover (premium feature)
+  slider.addEventListener("mouseenter", () => clearInterval(slide));
+  slider.addEventListener("mouseleave", () => {
+    slide = setInterval(autoSlide, speed);
+  });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+new Swiper(".benefits-slider", {
+  loop: true,
+  centeredSlides: true,
+  grabCursor: true,
+  spaceBetween: 20,
+
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    0: { slidesPerView: 1 },
+    600: { slidesPerView: 1.2 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }
+});
+</script>
 <!-- =============== End Ratan Plasfab AI Chat =============== -->
 </body>
 </html>

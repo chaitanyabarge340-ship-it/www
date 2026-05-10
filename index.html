@@ -361,40 +361,38 @@ display:block;
 
   <!-- Achievement section -->
 
-  <!-- ===== COMPANY STATS SECTION ===== -->
-
-<section class="company-stats">
+<section class="stats-section">
 
   <div class="stats-container">
 
-     <div class="stat-box">
+     <div class="stat-card">
       <h2 class="counter" data-target="200000+">0</h2>
       <p>SQ.FT Windows Installed</p>
     </div>
 
-    <div class="stat-box">
+    <div class="stat-card">
       <h2 class="counter" data-target="1200">0</h2>
       <p>Completed Projects</p>
     </div>
 
-    <div class="stat-box">
+    <div class="stat-card">
       <h2 class="counter" data-target="28">0</h2>
-      <p>Years in Business</p>
+      <p>Years Experience</p>
     </div>
 
-    <div class="stat-box">
+    <div class="stat-card">
       <h2 class="counter" data-target="18">0</h2>
       <p>Cities Served</p>
     </div>
 
-    <div class="stat-box">
+    <div class="stat-card">
       <h2 class="counter" data-target="45">0</h2>
       <p>Builder Partnerships</p>
     </div>
 
-    <div class="stat-box">
-      <h3>ISO Certified</h3>
-      <p>Quality Certifications</p>
+    <div class="stat-card">
+      <h2>ISO</h2>
+      <p>Certified Company</p>
     </div>
 
   </div>
@@ -403,62 +401,67 @@ display:block;
 
 <style>
 
-/* ===== COMPANY STATS ===== */
-
-.company-stats{
-  padding:80px 20px;
-  background:#0b0e12;
+.stats-section{
+  padding:70px 20px;
+  background:#0f1720;
 }
 
 .stats-container{
   max-width:1200px;
   margin:auto;
+
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:25px;
 }
 
-.stat-box{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:20px;
-  padding:40px 20px;
+.stat-card{
+  background:#161f2b;
+  border-radius:18px;
+  padding:40px 25px;
+
   text-align:center;
+
   transition:0.4s ease;
+  border:1px solid rgba(255,255,255,0.06);
 }
 
-.stat-box:hover{
+.stat-card:hover{
   transform:translateY(-8px);
-  border-color:#00bfff;
-  box-shadow:0 10px 30px rgba(0,191,255,0.2);
+  border-color:#38bdf8;
+  box-shadow:0 10px 25px rgba(56,189,248,0.2);
 }
 
-.stat-box h2,
-.stat-box h3{
-  font-size:42px;
-  color:#00bfff;
-  margin-bottom:10px;
+.stat-card h2{
+  font-size:48px;
+  color:#38bdf8;
+  margin-bottom:12px;
+  font-weight:700;
 }
 
-.stat-box p{
-  color:#d0d0d0;
+.stat-card p{
+  color:#d1d5db;
   font-size:17px;
+  line-height:1.5;
 }
+
+/* MOBILE */
 
 @media(max-width:768px){
 
-.stat-box h2,
-.stat-box h3{
-  font-size:34px;
-}
+  .stat-card{
+    padding:35px 20px;
+  }
+
+  .stat-card h2{
+    font-size:38px;
+  }
 
 }
 
 </style>
 
 <script>
-
-/* ===== COUNTER ANIMATION ===== */
 
 const counters = document.querySelectorAll('.counter');
 
@@ -469,11 +472,11 @@ counters.forEach(counter => {
     const target = +counter.getAttribute('data-target');
     const count = +counter.innerText;
 
-    const increment = target / 100;
+    const increment = target / 80;
 
     if(count < target){
       counter.innerText = Math.ceil(count + increment);
-      setTimeout(updateCounter, 20);
+      setTimeout(updateCounter,20);
     } else {
       counter.innerText = target + '+';
     }

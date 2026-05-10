@@ -359,6 +359,134 @@ display:block;
   View Brochure
 </a>
 
+  <!-- Achievement section -->
+
+  <!-- ===== COMPANY STATS SECTION ===== -->
+
+<section class="company-stats">
+
+  <div class="stats-container">
+
+     <div class="stat-box">
+      <h2 class="counter" data-target="200000+">0</h2>
+      <p>SQ.FT Windows Installed</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="1200">0</h2>
+      <p>Completed Projects</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="28">0</h2>
+      <p>Years in Business</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="18">0</h2>
+      <p>Cities Served</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="45">0</h2>
+      <p>Builder Partnerships</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>ISO Certified</h3>
+      <p>Quality Certifications</p>
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ===== COMPANY STATS ===== */
+
+.company-stats{
+  padding:80px 20px;
+  background:#0b0e12;
+}
+
+.stats-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.stat-box{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:20px;
+  padding:40px 20px;
+  text-align:center;
+  transition:0.4s ease;
+}
+
+.stat-box:hover{
+  transform:translateY(-8px);
+  border-color:#00bfff;
+  box-shadow:0 10px 30px rgba(0,191,255,0.2);
+}
+
+.stat-box h2,
+.stat-box h3{
+  font-size:42px;
+  color:#00bfff;
+  margin-bottom:10px;
+}
+
+.stat-box p{
+  color:#d0d0d0;
+  font-size:17px;
+}
+
+@media(max-width:768px){
+
+.stat-box h2,
+.stat-box h3{
+  font-size:34px;
+}
+
+}
+
+</style>
+
+<script>
+
+/* ===== COUNTER ANIMATION ===== */
+
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+
+  const updateCounter = () => {
+
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+
+    const increment = target / 100;
+
+    if(count < target){
+      counter.innerText = Math.ceil(count + increment);
+      setTimeout(updateCounter, 20);
+    } else {
+      counter.innerText = target + '+';
+    }
+
+  };
+
+  updateCounter();
+
+});
+
+</script>
+
+  <!-- End -->
 
   <!-- Advantages strip -->
   <section>

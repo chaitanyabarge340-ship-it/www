@@ -478,56 +478,67 @@ display:block;
 
 <script>
 
-const counters = document.querySelectorAll('.counter');
+document.addEventListener("DOMContentLoaded", () => {
 
-const startCounter = (counter) => {
+  const counters = document.querySelectorAll(".counter");
+  const section = document.querySelector(".stats-section");
 
-  const target = +counter.getAttribute('data-target');
+  let started = false;
 
-  const updateCounter = () => {
+  const startCounters = () => {
 
-    const count = +counter.innerText;
-    const increment = target / 80;
+    counters.forEach(counter => {
 
-    if(count < target){
-      counter.innerText = Math.ceil(count + increment);
-      setTimeout(updateCounter,20);
-    } else {
-      counter.innerText = target.toLocaleString() + '+';
-    }
+      const target = +counter.getAttribute("data-target");
 
-  };
+      const updateCounter = () => {
 
-  updateCounter();
+        const count = +counter.innerText.replace(/,/g,'');
 
-};
+        const increment = target / 80;
 
-const observer = new IntersectionObserver((entries) => {
+        if(count < target){
 
-  entries.forEach(entry => {
+          counter.innerText = Math.ceil(count + increment);
 
-    if(entry.isIntersecting){
+          setTimeout(updateCounter,20);
 
-      counters.forEach(counter => {
+        } else {
 
-        if(!counter.classList.contains('started')){
-
-          counter.classList.add('started');
-          startCounter(counter);
+          counter.innerText = target.toLocaleString() + "+";
 
         }
 
-      });
+      };
 
-    }
+      updateCounter();
 
+    });
+
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+      if(entry.isIntersecting && !started){
+
+        started = true;
+        startCounters();
+
+      }
+
+    });
+
+  }, {
+    threshold: 0.3
   });
 
-},{
-  threshold:0.4
-});
+  if(section){
+    observer.observe(section);
+  }
 
-observer.observe(document.querySelector('.stats-section'));
+});
 
 </script>
 

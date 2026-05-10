@@ -480,27 +480,54 @@ display:block;
 
 const counters = document.querySelectorAll('.counter');
 
-counters.forEach(counter => {
+const startCounter = (counter) => {
+
+  const target = +counter.getAttribute('data-target');
 
   const updateCounter = () => {
 
-    const target = +counter.getAttribute('data-target');
     const count = +counter.innerText;
-
     const increment = target / 80;
 
     if(count < target){
       counter.innerText = Math.ceil(count + increment);
       setTimeout(updateCounter,20);
     } else {
-      counter.innerText = target + '+';
+      counter.innerText = target.toLocaleString() + '+';
     }
 
   };
 
   updateCounter();
 
+};
+
+const observer = new IntersectionObserver((entries) => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+
+      counters.forEach(counter => {
+
+        if(!counter.classList.contains('started')){
+
+          counter.classList.add('started');
+          startCounter(counter);
+
+        }
+
+      });
+
+    }
+
+  });
+
+},{
+  threshold:0.4
 });
+
+observer.observe(document.querySelector('.stats-section'));
 
 </script>
 
